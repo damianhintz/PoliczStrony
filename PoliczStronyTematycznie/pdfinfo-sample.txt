@@ -1,0 +1,29 @@
+﻿pdfinfo -l - 1
+
+File:           
+Title:          011/001-2/1994
+Subject:        OPE
+Keywords:       142401_2.0001 011/001-2/1994 10.10.1994 OPE
+Author:         OPGK-Olsztyn
+Producer:       http://www.adultpdf.com
+CreationDate:   03/08/13 15:49:48
+ModDate:        03/08/13 15:49:48
+Tagged:         no
+Form:           none
+Pages:          101
+Encrypted:      no
+Page    1 size: 622 x 902 pts
+Page    2 size: 691 x 835 pts
+Page    3 size: 588 x 834 pts
+Page    4 size: 588 x 833 pts
+Page    5 size: 588 x 834 pts
+Page    6 size: 588 x 834 pts
+Page    7 size: 582 x 833 pts
+Page    8 size: 588 x 834 pts
+Page    9 size: 582 x 833 pts
+Page   10 size: 588 x 833 pts
+Page   11 size: 588 x 833 pts
+*Page size:      593 x 842 pts
+File size:      62184610 bytes
+Optimized:      no
+PDF version:    1.4                

@@ -1,0 +1,28 @@
+﻿PoliczStrony v1.0.1 - Policz strony tematycznie w plikach pdf
+Data publikacji: 3 lipca 2014
+
+Nowe funkcje:
+
+Pomoc:
+PoliczStronyTematycznie.exe [roboczy katalog] [typ pliku]
+
+find "Plik:" PoliczStrony.log>Plik.log
+find "Strony:" PoliczStrony.log>Strony.log
+
+** Zmiany (historia)
+Do zrobienia
+
+2015-07-06 v1.0.1
+* aktualizacja: zmiana nazwy aplikacji na PoliczStronyTematycznie
+
+2014-07-03 v1.0.1-beta
+* poprawka: zmiennoprzecinkowy rozmiar strony w punktach
+
+2014-07-02 v1.0-beta
+* nowa funkcja: domyślny bieżący katalog
+* nowa funkcja: domyślny typ pliku *.pdf
+* rozmiary stron (PoliczStronyA)
+* liczba stron (PoliczStrony)
+
+2013-06-26 v1.0-alpha
+* pierwsza wersja
