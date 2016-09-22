@@ -4,15 +4,19 @@ Zliczanie stron A4 w plikach pdf
 
 # Pomoc
 
+Roboczy katalog:
+
 PoliczStronyA4.exe [roboczy katalog]
-lub bez żadnych parametrów (wtedy przeliczy jeszcze raz z wcześniej utworzonego pliku PoliczStronyA4.tab)
+
+Bez żadnych parametrów, wtedy przeliczy jeszcze raz z wcześniej utworzonego pliku PoliczStronyA4.tab:
+
 PoliczStronyA4.exe
 
 # Nowe funkcje
 
 * zliczanie strona A4 w plikach pdf (strony mniejsze od A4 traktowane są jak jedna strona A4)
 
-# Historia)
+# Historia
 
 Do zrobienia
 

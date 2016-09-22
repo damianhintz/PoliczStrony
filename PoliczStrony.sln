@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStronyTematycznie", "PoliczStronyTematycznie\PoliczStronyTematycznie.csproj", "{16CAE0E8-9F53-41FD-AFAD-195359D5C300}"
 EndProject
@@ -12,6 +12,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStrony.Testy", "PoliczStrony.Testy\PoliczStrony.Testy.csproj", "{493B303F-2872-4860-A3E7-7563D11A69CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStronyA4.Domena", "PoliczStronyA4.Domena\PoliczStronyA4.Domena.csproj", "{D10016E1-C25C-4415-81CE-1A1030968A22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E029E91-9F61-4A69-9A2F-C1EC93D17B33}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
