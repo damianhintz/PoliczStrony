@@ -2,6 +2,11 @@
 ---
 Zliczanie stron A4 w plikach pdf lub jpg
 
+# Cechy
+
+* zliczanie stron A4 w plikach pdf (strony mniejsze od A4 traktowane są jak jedna strona A4)
+* zliczanie stron A4 w plikach jpg
+
 # Pomoc
 
 Roboczy katalog:
@@ -12,15 +17,15 @@ Bez żadnych parametrów, wtedy przeliczy jeszcze raz z wcześniej utworzonego p
 
 StronyA4.exe
 
-# Nowe funkcje
-
-* zliczanie strona A4 w plikach pdf (strony mniejsze od A4 traktowane są jak jedna strona A4)
-
 # Historia
 
 Do zrobienia
 
 * [ ] zliczanie stron w plikach jpg
+
+2016-11-16 v1.4-beta
+
+* [ ] nowość: zliczanie stron A4 w plikach jpg
 
 2015-09-21 v1.3.2
 

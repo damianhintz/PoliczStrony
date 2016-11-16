@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PoliczStronyA4.Domena;
+using StronyA4.Domena;
 
 namespace PoliczStrony.Testy.PoliczStronyA4
 {

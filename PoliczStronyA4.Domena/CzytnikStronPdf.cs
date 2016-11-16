@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using PoliczStronyA4.Domena.Rozszerzenia;
+using StronyA4.Domena.Rozszerzenia;
 
-namespace PoliczStronyA4.Domena
+namespace StronyA4.Domena
 {
     public class CzytnikStronPdf
     {

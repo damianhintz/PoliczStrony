@@ -6,7 +6,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace PoliczStronyA4.Domena
+namespace StronyA4.Domena
 {
     public class ZliczaczStronPdf
     {

@@ -7,7 +7,7 @@
     <ProjectGuid>{D10016E1-C25C-4415-81CE-1A1030968A22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PoliczStronyA4.Domena</RootNamespace>
+    <RootNamespace>StronyA4.Domena</RootNamespace>
     <AssemblyName>StronyA4.Domena</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

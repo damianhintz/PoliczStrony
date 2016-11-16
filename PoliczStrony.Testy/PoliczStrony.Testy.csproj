@@ -76,11 +76,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="AnalizatorFormatuStronyTest.tab" />
-    <None Include="CzytnikStronPdfTest_14.pdf" />
-    <None Include="CzytnikStronPdfTest_1.pdf" />
+    <None Include="Samples\CzytnikStronPdfTest_14.pdf" />
+    <None Include="Samples\CzytnikStronPdfTest_1.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CzytnikStronPdfTest_0.pdf" />
+    <None Include="Samples\CzytnikStronPdfTest_0.pdf" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

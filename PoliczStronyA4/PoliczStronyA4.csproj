@@ -7,7 +7,7 @@
     <ProjectGuid>{3318D150-1EC2-444C-8ACF-DA7D2C523C3C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PoliczStronyA4</RootNamespace>
+    <RootNamespace>StronyA4</RootNamespace>
     <AssemblyName>StronyA4</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

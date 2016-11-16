@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PoliczStronyA4.Domena.Rozszerzenia
+namespace StronyA4.Domena.Rozszerzenia
 {
     public static class DoubleKonwerter
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PoliczStronyA4.Domena;
+using StronyA4.Domena;
 using iTextSharp.text.exceptions;
 
 namespace PoliczStrony.Testy.PoliczStronyA4
