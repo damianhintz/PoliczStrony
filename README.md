@@ -1,4 +1,4 @@
-﻿StronyA4 v1.3.2, 16 listopada 2016
+﻿StronyA4 v1.4-beta, 16 listopada 2016
 ---
 Zliczanie stron A4 w plikach pdf lub jpg
 
