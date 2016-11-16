@@ -39,7 +39,6 @@ namespace PoliczStronyA4.Domena
         {
             foreach (var plik in _pliki)
             {
-                //catch (Exception ex) { _błędy.Add(plik + " (" + ex.Message + ")"); continue; } //Błędny plik
                 try
                 {
                     var liczbaStron = OdczytajStronyPlikuPdf(plik);
@@ -51,12 +50,6 @@ namespace PoliczStronyA4.Domena
 
         int OdczytajStronyPlikuPdf(string fileName)
         {
-            //var teraz = DateTime.Now;
-            //var różnica = teraz - początek;
-            //var sekundy = różnica.TotalSeconds;
-            //var liczbaPlikówNaSekundę = nr / sekundy;
-            //var przewidywanyCzas = (_pliki.Length - nr) / liczbaPlikówNaSekundę;
-            //Console.WriteLine("{0}, {1} stron[y] #{2}/{3} {4:F0}s {5:F0}pliki/s {6:F0}min. ({7})", plik, liczbaStron, nr++, _pliki.Length, sekundy, liczbaPlikówNaSekundę, przewidywanyCzas / 60, _błędy.Count);
             var czytnik = new CzytnikStronPdf(fileName);
             foreach (var strona in czytnik.Strony)
             {

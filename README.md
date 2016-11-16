@@ -1,16 +1,16 @@
-﻿PoliczStronyA4 v1.3.2, 21 września 2015
+﻿StronyA4 v1.3.2, 16 listopada 2016
 ---
-Zliczanie stron A4 w plikach pdf
+Zliczanie stron A4 w plikach pdf lub jpg
 
 # Pomoc
 
 Roboczy katalog:
 
-PoliczStronyA4.exe [roboczy katalog]
+StronyA4.exe [roboczy katalog]
 
 Bez żadnych parametrów, wtedy przeliczy jeszcze raz z wcześniej utworzonego pliku PoliczStronyA4.tab:
 
-PoliczStronyA4.exe
+StronyA4.exe
 
 # Nowe funkcje
 
@@ -19,6 +19,8 @@ PoliczStronyA4.exe
 # Historia
 
 Do zrobienia
+
+* [ ] zliczanie stron w plikach jpg
 
 2015-09-21 v1.3.2
 

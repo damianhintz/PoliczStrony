@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zbiór atrybutów. Zmień wartości tych atrybutów by zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("Policz strony A4 w plikach pdf")]
-[assembly: AssemblyDescription("Policz strony A4 w plikach pdf")]
+[assembly: AssemblyTitle("Policz strony A4 w plikach pdf lub jpg")]
+[assembly: AssemblyDescription("Policz strony A4 w plikach pdf lub jpg")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OPGK Olsztyn")]
-[assembly: AssemblyProduct("PoliczStronyA4")]
-[assembly: AssemblyCopyright("Copyright © OPGK Olsztyn 2014-2015")]
+[assembly: AssemblyProduct("StronyA4")]
+[assembly: AssemblyCopyright("Copyright © Damian Hintz 2014-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

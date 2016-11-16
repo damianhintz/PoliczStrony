@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("PoliczStronyA4.Domena")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Biblioteka klas domeny zliczania stron A4")]
+[assembly: AssemblyDescription("Biblioteka klas domeny zliczania stron A4")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OPGK Olsztyn")]
-[assembly: AssemblyProduct("PoliczStronyA4.Domena")]
-[assembly: AssemblyCopyright("Copyright © OPGK Olsztyn 2015")]
+[assembly: AssemblyProduct("StronyA4.Domena")]
+[assembly: AssemblyCopyright("Copyright © Damian Hintz 2015-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

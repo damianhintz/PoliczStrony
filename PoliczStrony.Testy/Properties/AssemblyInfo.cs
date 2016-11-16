@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zbiór atrybutów. Zmień wartości tych atrybutów by zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("PoliczStrony.Testy")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Biblioteka testów aplikacji do zliczania stron A4")]
+[assembly: AssemblyDescription("Biblioteka testów aplikacji do zliczania stron A4")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("OPGK Olsztyn")]
 [assembly: AssemblyProduct("PoliczStrony.Testy")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © Damian Hintz 2015-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
