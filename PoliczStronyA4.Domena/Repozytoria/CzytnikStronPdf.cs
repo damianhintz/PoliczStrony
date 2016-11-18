@@ -5,22 +5,23 @@ using System.Text;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using StronyA4.Domena.Rozszerzenia;
+using StronyA4.Domena.Encje;
 
-namespace StronyA4.Domena
+namespace StronyA4.Domena.Repozytoria
 {
     public class CzytnikStronPdf
     {
         string _fileName;
         PdfReader _pdf;
-        public IEnumerable<StronaPdf> Strony { get { return _strony; } }
+        public IEnumerable<StronaObrazu> Strony { get { return _strony; } }
         public int LiczbaStron { get { return _strony.Count; } }
-        List<StronaPdf> _strony;
+        List<StronaObrazu> _strony;
 
         public CzytnikStronPdf(string fileName)
         {
             _fileName = fileName;
             _pdf = new PdfReader(fileName);
-            _strony = new List<StronaPdf>(_pdf.NumberOfPages);
+            _strony = new List<StronaObrazu>(_pdf.NumberOfPages);
             OdczytajWszystkieStronyPlikuPdf();
         }
 
@@ -33,14 +34,28 @@ namespace StronyA4.Domena
             }
         }
 
-        StronaPdf OdczytajStronę(int numerStrony)
+        StronaObrazu OdczytajStronę(int numerStrony)
         {
             Rectangle size = _pdf.GetPageSize(numerStrony);
-            var rozmiarPunkty = new RozmiarStrony(size.Width.ToInt(), size.Height.ToInt());
+            var rozmiarPunkty = new RozmiarStrony
+            {
+                Szerokość = size.Width.ToInt(),
+                Wysokość = size.Height.ToInt()
+            };
             var szerokośćMilimetry = rozmiarPunkty.Szerokość * 0.3528;
             var wysokośćMilimetry = rozmiarPunkty.Wysokość * 0.3528;
-            var rozmiarMilimetry = new RozmiarStrony(szerokośćMilimetry.ToInt(), wysokośćMilimetry.ToInt());
-            var strona = new StronaPdf(_fileName) { NumerStrony = numerStrony, RozmiarPunkty = rozmiarPunkty, RozmiarMilimetry = rozmiarMilimetry };
+            var rozmiarMilimetry = new RozmiarStrony
+            {
+                Szerokość = szerokośćMilimetry.ToInt(),
+                Wysokość = wysokośćMilimetry.ToInt()
+            };
+            var strona = new StronaObrazu
+            {
+                Plik = _fileName,
+                Numer = numerStrony,
+                //Punkty = rozmiarPunkty,
+                Rozmiar = rozmiarMilimetry
+            };
             return strona;
         }
     }

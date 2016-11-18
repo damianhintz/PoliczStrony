@@ -5,18 +5,22 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStronyTematycznie", "PoliczStronyTematycznie\PoliczStronyTematycznie.csproj", "{16CAE0E8-9F53-41FD-AFAD-195359D5C300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStronyA4", "PoliczStronyA4\PoliczStronyA4.csproj", "{3318D150-1EC2-444C-8ACF-DA7D2C523C3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4", "PoliczStronyA4\StronyA4.csproj", "{3318D150-1EC2-444C-8ACF-DA7D2C523C3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczArkusze", "PoliczArkusze\PoliczArkusze.csproj", "{FAD52FAD-4E30-41A4-9B78-D82813F2FD88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStrony.Testy", "PoliczStrony.Testy\PoliczStrony.Testy.csproj", "{493B303F-2872-4860-A3E7-7563D11A69CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4.Testy", "PoliczStrony.Testy\StronyA4.Testy.csproj", "{493B303F-2872-4860-A3E7-7563D11A69CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStronyA4.Domena", "PoliczStronyA4.Domena\PoliczStronyA4.Domena.csproj", "{D10016E1-C25C-4415-81CE-1A1030968A22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4.Domena", "PoliczStronyA4.Domena\StronyA4.Domena.csproj", "{D10016E1-C25C-4415-81CE-1A1030968A22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E029E91-9F61-4A69-9A2F-C1EC93D17B33}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4.EntityFramework", "StronyA4.EntityFramework\StronyA4.EntityFramework.csproj", "{0FADA17B-9C90-4EB7-98BC-11F8CAB9BA95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyJpgA4", "StronyJpgA4\StronyJpgA4.csproj", "{204D9346-19CA-404E-8CA6-FD6134E7CA6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,14 @@ Global
 		{D10016E1-C25C-4415-81CE-1A1030968A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D10016E1-C25C-4415-81CE-1A1030968A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D10016E1-C25C-4415-81CE-1A1030968A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FADA17B-9C90-4EB7-98BC-11F8CAB9BA95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FADA17B-9C90-4EB7-98BC-11F8CAB9BA95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FADA17B-9C90-4EB7-98BC-11F8CAB9BA95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FADA17B-9C90-4EB7-98BC-11F8CAB9BA95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204D9346-19CA-404E-8CA6-FD6134E7CA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204D9346-19CA-404E-8CA6-FD6134E7CA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204D9346-19CA-404E-8CA6-FD6134E7CA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204D9346-19CA-404E-8CA6-FD6134E7CA6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,25 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using StronyA4.Domena.Abstrakcje;
 
 namespace StronyA4.Domena
 {
-    class PowierzchniowyAnalizatorStrony : IAnalizatorFormatuStrony
+    /// <summary>
+    /// Klasyfikator formatu strony na podstawie stosunku jej powierzchni do powierzchni formatu A4.
+    /// </summary>
+    class PowierzchniowyKlasyfikatorStrony : IKlasyfikatorStrony
     {
-        public FormatStrony ObliczFormatStrony(RozmiarStrony rozmiar)
+        public FormatStrony UstalFormatStrony(RozmiarStrony rozmiar)
         {
             var szerokość = rozmiar.Szerokość;
             var wysokość = rozmiar.Wysokość;
             var stronyA4 = Math.Min(A4(szerokość, wysokość), A4(wysokość, szerokość));
-            var format = "A4";
-            if (stronyA4 > 8) format = "A0";
-            if (stronyA4 > 4) format = "A1";
-            if (stronyA4 > 2) format = "A2";
-            if (stronyA4 > 1) format = "A3";
-            else format = "A4";
-            return new FormatStrony(format) { StronyA4 = stronyA4, EfektywneStronyA4 = stronyA4 };
+            var nazwa = "A4";
+            if (stronyA4 > 8) nazwa = "A0";
+            if (stronyA4 > 4) nazwa = "A1";
+            if (stronyA4 > 2) nazwa = "A2";
+            if (stronyA4 > 1) nazwa = "A3";
+            else nazwa = "A4";
+            return new FormatStrony
+            {
+                Nazwa = nazwa,
+                StronyA4 = stronyA4
+            };
         }
-        
+
         static int A4(double szerokość, double wysokość)
         {
             var a4 = 0;

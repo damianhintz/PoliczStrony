@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using StronyA4.Domena;
+using StronyA4.Domena.Abstrakcje;
+using StronyA4.Domena.Repozytoria;
 
 namespace StronyA4
 {
@@ -12,7 +14,7 @@ namespace StronyA4
         static string _roboczyKatalog;
         static string[] _pliki;
         readonly Encoding _kodowanie;
-        static IAnalizatorFormatuStrony analizator = new MetrycznyAnalizatorFormatuStrony();
+        static IKlasyfikatorStrony analizator = new MetrycznyKlasyfikatorStrony();
         static List<string> _błędy = new List<string>();
 
         public Program(string roboczyKatalog, int stronaKodowa)
@@ -47,12 +49,14 @@ namespace StronyA4
 
         static void PoliczStronyWKatalogu()
         {
-            var zliczacz = new ZliczaczStronPdf(_roboczyKatalog);
-            zliczacz.Zapisz("PoliczStronyA4.tab");
+            var strony = new PlikoweRepozytoriumStron("PoliczStronyA4.tab");
+            var czytnik = new CzytnikPlikówPdf(strony);
+            czytnik.Wczytaj(_roboczyKatalog);
+            strony.ZapiszZmiany();
             Console.WriteLine("Podsumowanie:");
-            Console.WriteLine("Liczba plików: {0}", zliczacz.LiczbaPlików);
-            Console.WriteLine("Suma stron: {0}", zliczacz.SumaStron);
-            Console.WriteLine("Suma stron A4: {0}", zliczacz.SumaStronA4);
+            Console.WriteLine("Liczba plików: {0}", strony.Pliki.Count());
+            Console.WriteLine("Suma stron: {0}", strony.Strony.Count());
+            //Console.WriteLine("Suma stron A4: {0}", zliczacz.SumaStronA4);
             if (_błędy.Count > 0)
             {
                 Console.WriteLine("Błędy: {0} (error.log)", _błędy.Count);
@@ -63,7 +67,7 @@ namespace StronyA4
         static void PoliczStronyZPliku()
         {
             var linie = File.ReadAllLines("PoliczStronyA4.tab", Encoding.GetEncoding(1250));
-            var sumaStronA4 = 0;
+            var sumaStronA4 = 0.0;
             var formaty = new Dictionary<string, int>();
             formaty.Add("A0", 0);
             formaty.Add("A1", 0);
@@ -76,8 +80,12 @@ namespace StronyA4
                 var pola = linia.Split('\t');
                 var szerokośćMilimetry = int.Parse(pola[4]);
                 var wysokośćMilimetry = int.Parse(pola[5]);
-                var rozmiarStrony = new RozmiarStrony(szerokośćMilimetry, wysokośćMilimetry);
-                var formatStrony = analizator.ObliczFormatStrony(rozmiarStrony);
+                var rozmiarStrony = new RozmiarStrony
+                {
+                    Szerokość = szerokośćMilimetry,
+                    Wysokość = wysokośćMilimetry
+                };
+                var formatStrony = analizator.UstalFormatStrony(rozmiarStrony);
                 sumaStronA4 += formatStrony.StronyA4;
                 formaty[formatStrony.Nazwa]++;
                 lines.Add(string.Format("{0:F0}\t{1:F0}",

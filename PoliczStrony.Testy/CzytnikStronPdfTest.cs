@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StronyA4.Domena;
+using StronyA4.Domena.Repozytoria;
 using iTextSharp.text.exceptions;
 
 namespace PoliczStrony.Testy.PoliczStronyA4
@@ -18,12 +19,12 @@ namespace PoliczStrony.Testy.PoliczStronyA4
             var nr = 0;
             foreach (var strona in czytnik.Strony)
             {
-                Assert.AreEqual(@"..\..\Samples\CzytnikStronPdfTest_14.pdf", strona.FileName);
-                Assert.AreEqual(++nr, strona.NumerStrony);
-                Assert.AreEqual(595, strona.RozmiarPunkty.Szerokość);
-                Assert.AreEqual(842, strona.RozmiarPunkty.Wysokość);
-                Assert.AreEqual(210, strona.RozmiarMilimetry.Szerokość);
-                Assert.AreEqual(297, strona.RozmiarMilimetry.Wysokość);
+                Assert.AreEqual(@"..\..\Samples\CzytnikStronPdfTest_14.pdf", strona.Plik);
+                Assert.AreEqual(++nr, strona.Numer);
+                //Assert.AreEqual(595, strona.Punkty.Szerokość);
+                //Assert.AreEqual(842, strona.Punkty.Wysokość);
+                Assert.AreEqual(210, strona.Rozmiar.Szerokość);
+                Assert.AreEqual(297, strona.Rozmiar.Wysokość);
 
             }
         }
@@ -37,12 +38,12 @@ namespace PoliczStrony.Testy.PoliczStronyA4
             var nr = 0;
             foreach (var strona in czytnik.Strony)
             {
-                Assert.AreEqual(@"..\..\Samples\CzytnikStronPdfTest_1.pdf", strona.FileName);
-                Assert.AreEqual(++nr, strona.NumerStrony);
-                Assert.AreEqual(595, strona.RozmiarPunkty.Szerokość);
-                Assert.AreEqual(842, strona.RozmiarPunkty.Wysokość);
-                Assert.AreEqual(210, strona.RozmiarMilimetry.Szerokość);
-                Assert.AreEqual(297, strona.RozmiarMilimetry.Wysokość);
+                Assert.AreEqual(@"..\..\Samples\CzytnikStronPdfTest_1.pdf", strona.Plik);
+                Assert.AreEqual(++nr, strona.Numer);
+                //Assert.AreEqual(595, strona.Punkty.Szerokość);
+                //Assert.AreEqual(842, strona.Punkty.Wysokość);
+                Assert.AreEqual(210, strona.Rozmiar.Szerokość);
+                Assert.AreEqual(297, strona.Rozmiar.Wysokość);
 
             }
         }

@@ -63,14 +63,15 @@
     <Compile Include="AnalizatorFormatuStronyTest.cs" />
     <Compile Include="FormatStronyTest.cs" />
     <Compile Include="CzytnikStronPdfTest.cs" />
-    <Compile Include="StronaPdfTest.cs" />
+    <Compile Include="StronaTest.cs" />
     <Compile Include="RozmiarStronyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepozytoriumStronTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PoliczStronyA4.Domena\PoliczStronyA4.Domena.csproj">
+    <ProjectReference Include="..\PoliczStronyA4.Domena\StronyA4.Domena.csproj">
       <Project>{d10016e1-c25c-4415-81ce-1a1030968a22}</Project>
-      <Name>PoliczStronyA4.Domena</Name>
+      <Name>StronyA4.Domena</Name>
     </ProjectReference>
     <ProjectReference Include="..\PoliczStronyTematycznie\PoliczStronyTematycznie.csproj">
       <Project>{16cae0e8-9f53-41fd-afad-195359d5c300}</Project>

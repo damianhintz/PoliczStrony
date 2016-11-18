@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StronyA4.Domena;
+using Shouldly;
 
 namespace PoliczStrony.Testy.PoliczStronyA4
 {
@@ -8,23 +9,23 @@ namespace PoliczStrony.Testy.PoliczStronyA4
     public class FormatStronyTest
     {
         [TestMethod]
-        public void test_czy_jest_nieokreślonny_format_strony()
+        public void FormatStrony_ShouldBeUndefined()
         {
             var format = new FormatStrony();
-            Assert.AreEqual("Nieokreślony format", format.Nazwa);
-            Assert.AreEqual(0, format.StronyA4);
-            Assert.AreEqual(0, format.EfektywneStronyA4);
-            Assert.AreEqual("Nieokreślony format", format.ToString());
+            format.Nazwa.ShouldBeNull();
+            format.Rozmiar.ShouldBeNull();
+            format.StronyA4.ShouldBe(0);
+            format.EfektywneStronyA4.ShouldBe(0);
         }
 
         [TestMethod]
-        public void test_czy_jest_określonny_format_strony()
+        public void FormatStrony_ShouldEfektywneStronyA4()
         {
-            var format = new FormatStrony("A4");
-            Assert.AreEqual("A4", format.Nazwa);
-            Assert.AreEqual(0, format.StronyA4);
-            Assert.AreEqual(0, format.EfektywneStronyA4);
-            Assert.AreEqual("A4", format.ToString());
+            var format = new FormatStrony { StronyA4 = 1 };
+            format.Nazwa.ShouldBeNull();
+            format.Rozmiar.ShouldBeNull();
+            format.StronyA4.ShouldBe(1);
+            format.EfektywneStronyA4.ShouldBe(1);
         }
     }
 }

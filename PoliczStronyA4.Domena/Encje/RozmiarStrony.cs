@@ -5,8 +5,9 @@ using System.Text;
 
 namespace StronyA4.Domena
 {
-    public interface IAnalizatorFormatuStrony
+    public class RozmiarStrony
     {
-        FormatStrony ObliczFormatStrony(RozmiarStrony rozmiar);
+        public long Szerokość { get; set; }
+        public long Wysokość { get; set; }
     }
 }
