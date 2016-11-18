@@ -60,7 +60,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AnalizatorFormatuStronyTest.cs" />
+    <Compile Include="KlasyfikatorStronyTest.cs" />
     <Compile Include="FormatStronyTest.cs" />
     <Compile Include="CzytnikStronPdfTest.cs" />
     <Compile Include="StronaTest.cs" />
@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="AnalizatorFormatuStronyTest.tab" />
+    <None Include="Samples\KlasyfikatorStronyTest.tab" />
     <None Include="Samples\CzytnikStronPdfTest_14.pdf" />
     <None Include="Samples\CzytnikStronPdfTest_1.pdf" />
   </ItemGroup>

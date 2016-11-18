@@ -5,17 +5,18 @@ using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StronyA4.Domena;
+using Shouldly;
 
-namespace PoliczStrony.Testy.PoliczStronyA4
+namespace PoliczStrony.Testy
 {
     [TestClass]
-    public class AnalizatorFormatuStronyTest
+    public class KlasyfikatorStronyTest
     {
         [TestMethod]
         public void test_czy_suma_stron_A4_w_pliku_wynosi_66016()
         {
             var analizator = new MetrycznyKlasyfikatorStrony();
-            var fileName = Path.Combine(@"..\..", "AnalizatorFormatuStronyTest.tab");
+            var fileName = Path.Combine(@"..\..\Samples", "KlasyfikatorStronyTest.tab");
             var linie = File.ReadAllLines(fileName, Encoding.GetEncoding(1250));
             var sumaStron = linie.Length - 1;
             var sumaStronA4 = 0.0;
