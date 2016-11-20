@@ -45,7 +45,7 @@ namespace StronyJpg
             var liczbaStronA4 = sumaPowierzchni / powierzchniaA4;
             Console.WriteLine("Strony A4 (powierzchniowo): {0}", liczbaStronA4);
             File.WriteAllLines("StronyA4.tab", 
-                _strony.Select(m => m.Plik + "\t" + m.Szerokość + "\t" + m.Wysokość + "\t" + m.Resolution));
+                _strony.Select(m => m.Plik + "\t" + m.Szerokość + "\t" + m.Wysokość + "\t" + m.Rozdzielczość));
             Console.WriteLine("Koniec.");
             Console.Read();
         }

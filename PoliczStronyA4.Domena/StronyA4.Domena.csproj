@@ -34,6 +34,7 @@
       <HintPath>..\packages\iTextSharp.5.5.7\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,11 +42,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstrakcje\IRepozytoriumStron.cs" />
     <Compile Include="Abstrakcje\IStrona.cs" />
     <Compile Include="Encje\RozdzielczośćStrony.cs" />
+    <Compile Include="Encje\Rozszerzenia\RozmiarRozszerzenia.cs" />
+    <Compile Include="Encje\Rozszerzenia\StronaRozszerzenia.cs" />
     <Compile Include="Repozytoria\CzytnikStronPdf.cs" />
     <Compile Include="Repozytoria\PlikoweRepozytoriumStron.cs" />
     <Compile Include="Rozszerzenia\DoubleKonwerter.cs" />

@@ -53,7 +53,6 @@ namespace StronyA4.Domena.Repozytoria
             {
                 Plik = _fileName,
                 Numer = numerStrony,
-                //Punkty = rozmiarPunkty,
                 Rozmiar = rozmiarMilimetry
             };
             return strona;

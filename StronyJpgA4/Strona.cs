@@ -14,7 +14,7 @@ namespace StronyJpg
         public string Plik { get; set; }
         public long Szerokość { get; set; }
         public long Wysokość { get; set; }
-        public int Resolution { get; set; }
+        public int Rozdzielczość { get; set; }
 
         public static Strona ParseFromExifTags(string fileName)
         {
@@ -29,7 +29,7 @@ namespace StronyJpg
                 meta.Wysokość = height;
                 int resolution;
                 reader.GetTagValue(ExifTags.XResolution, out resolution);
-                meta.Resolution = resolution;
+                meta.Rozdzielczość = resolution;
             }
             return meta;
         }
@@ -45,7 +45,7 @@ namespace StronyJpg
                 //string date = md.DateTaken;
                 meta.Szerokość = img.PixelWidth;
                 meta.Wysokość = img.PixelHeight;
-                meta.Resolution = (int)img.DpiX;
+                meta.Rozdzielczość = (int)img.DpiX;
             }
             return meta;
         }
