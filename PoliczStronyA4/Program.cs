@@ -14,41 +14,38 @@ namespace StronyA4
     /// </summary>
     class Program
     {
-        string _folder;
-        string _fileType = Settings.Default.FileType;
-        string _formats = Settings.Default.Formaty;
+        public string Folder;
+        public string FileType = Settings.Default.FileType;
+        public string Formats = Settings.Default.Formaty;
         IRepozytoriumStron _strony = new RepozytoriumStron();
-
-        public Program(string folder)
-        {
-            _folder = folder;
-        }
-
+        
         void PokażLogo()
         {
             Console.WriteLine("StronyA4 v1.4-beta - Policz strony A4 w plikach pdf lub jpg");
             Console.WriteLine("Data publikacji: 21 listopada 2016");
-            Console.WriteLine("Roboczy katalog: {0}", _folder == null ? "nie określono katalogu, obliczanie z pliku tab" : _folder);
         }
 
         static void Main(string[] args)
         {
-            var program = new Program(folder: args[0]);
+            var program = new Program();
             program.PokażLogo();
+            if (args.Length > 2) program.Formats = args[2];
+            if (args.Length > 1) program.FileType = args[1];
+            if (args.Length > 0) program.Folder = args[0];
             if (args.Length == 0) program.PoliczStronyCached();
-            else program.PoliczStronyFolderu(fileType: args[1]);
+            else program.PoliczStronyFolderu();
             program.PokażPodsumowanie();
             Console.Read();
         }
 
-        void PoliczStronyFolderu(string fileType)
+        void PoliczStronyFolderu()
         {
-            _fileType = fileType;
+            Console.WriteLine("Roboczy katalog: {0}", Folder == null ? "nie określono katalogu, obliczanie z pliku tab" : Folder);
             ICzytnikPlików czytnik = null;
-            if (fileType.Equals("*.pdf")) czytnik = new CzytnikPlikówPdf(_strony);
-            else if (fileType.Equals("*.jpg")) czytnik = new CzytnikPlikówJpg(_strony);
-            else throw new NotImplementedException("Brak implementacji importera plików typu: " + fileType);
-            czytnik.Wczytaj(_folder);
+            if (FileType.Equals("*.pdf")) czytnik = new CzytnikPlikówPdf(_strony);
+            else if (FileType.Equals("*.jpg")) czytnik = new CzytnikPlikówJpg(_strony);
+            else throw new NotImplementedException("Brak implementacji importera plików typu: " + FileType);
+            czytnik.Wczytaj(Folder);
             //strony.ZapiszZmiany();
         }
 
@@ -61,7 +58,7 @@ namespace StronyA4
 
         void PokażPodsumowanie()
         {
-            Console.WriteLine("Liczba plików ({0}): {1}", _fileType, _strony.Pliki.Count());
+            Console.WriteLine("Liczba plików ({0}): {1}", FileType, _strony.Pliki.Count());
             Console.WriteLine("Suma stron: {0}", _strony.Strony.Count());
             PokażZestawienieMetryczne();
             PokażZestawieniePowierzchniowe();
