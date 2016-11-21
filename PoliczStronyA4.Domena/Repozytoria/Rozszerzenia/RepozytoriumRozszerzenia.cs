@@ -18,16 +18,18 @@ namespace StronyA4.Domena.Repozytoria.Rozszerzenia
         /// </summary>
         /// <param name="strony"></param>
         /// <returns></returns>
-        public static int SumaStronA4Metrycznie(this IRepozytoriumStron strony)
+        public static int SumaStronA4Metrycznie(this IRepozytoriumStron strony, params string[] formaty)
         {
             var klasyfikator = new MetrycznyKlasyfikatorStrony();
+            foreach (var format in formaty) klasyfikator.DodajFormat(format);
             var sumaStron = strony.Strony.Sum(s => klasyfikator.UstalFormatStrony(s).StronyA4);
             return (int)sumaStron;
         }
 
-        public static Dictionary<string, List<IStrona>> ZestawienieStronA4Metrycznie(this IRepozytoriumStron strony)
+        public static Dictionary<string, List<IStrona>> ZestawienieStronA4Metrycznie(this IRepozytoriumStron strony, params string[] formaty)
         {
             var klasyfikator = new MetrycznyKlasyfikatorStrony();
+            foreach (var format in formaty) klasyfikator.DodajFormat(format);
             var zestawienie = new Dictionary<string, List<IStrona>>();
             foreach (var f in klasyfikator.Formaty) zestawienie.Add(f.Nazwa, new List<IStrona>());
             foreach (var s in strony.Strony)
@@ -50,6 +52,20 @@ namespace StronyA4.Domena.Repozytoria.Rozszerzenia
             var formatA4 = StandardoweFormaty.FormatA4;
             var powierzchniaA4 = formatA4.Szerokość.Pixels * formatA4.Wysokość.Pixels;
             return (int)(sumaPowierzchni / powierzchniaA4);
+        }
+
+        public static Dictionary<string, List<IStrona>> ZestawienieStronA4Powierzchniowo(this IRepozytoriumStron strony, params string[] formaty)
+        {
+            var klasyfikator = new PowierzchniowyKlasyfikatorStrony();
+            //foreach (var format in formaty) klasyfikator.DodajFormat(format);
+            var zestawienie = new Dictionary<string, List<IStrona>>();
+            //foreach (var f in klasyfikator.Formaty) zestawienie.Add(f.Nazwa, new List<IStrona>());
+            foreach (var s in strony.Strony)
+            {
+                var f = klasyfikator.UstalFormatStrony(s);
+                zestawienie[f.Nazwa].Add(s);
+            }
+            return zestawienie;
         }
     }
 }

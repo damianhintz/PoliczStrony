@@ -47,6 +47,15 @@ namespace StronyA4.Domena.Klasyfikacja
         public void DodajFormat(FormatStrony format)
         {
             Debug.Assert(format != null, "format != null");
+            if (_formaty.Contains(format)) return;
+            _formaty.Add(format);
+        }
+
+        public void DodajFormat(string nazwa)
+        {
+            Debug.Assert(nazwa != null, "format != null");
+            var format = StandardoweFormaty.Szukaj(nazwa);
+            if (_formaty.Contains(format)) return;
             _formaty.Add(format);
         }
     }

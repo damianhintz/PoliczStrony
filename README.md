@@ -27,7 +27,8 @@ Do zrobienia
 
 2016-11-21 v1.4-beta
 
-* [ ] nowość: zliczanie stron A4 w plikach jpg
+* nowość: zliczanie stron A4 w plikach jpg
+* nowość: konfigurowalna klasyfikacja (możliwość wyboru standardowych formatów)
 
 2015-09-21 v1.3.2
 

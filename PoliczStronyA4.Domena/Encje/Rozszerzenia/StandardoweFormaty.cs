@@ -71,5 +71,23 @@ namespace StronyA4.Domena.Encje.Rozszerzenia
             StronyA4 = 32
         };
 
+        public static readonly Dictionary<string, FormatStrony> Rejestr = new Dictionary<string, FormatStrony>
+        {
+            { "2A0", Format2A0 },
+            { "A0", FormatA0 },
+            { "A1", FormatA1 },
+            { "A2", FormatA2 },
+            { "A3", FormatA3 },
+            { "A4", FormatA4 },
+            { "A5", FormatA5 },
+            { "A6", FormatA6 }
+        };
+
+        public static FormatStrony Szukaj(string nazwa)
+        {
+            if (!Rejestr.ContainsKey(nazwa))
+                throw new NotImplementedException("Brak implementacji formatu strony:" + nazwa);
+            return Rejestr[nazwa];
+        }
     }
 }

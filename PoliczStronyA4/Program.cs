@@ -67,8 +67,9 @@ namespace StronyA4
 
         void PokażZestawienieMetryczne()
         {
-            Console.WriteLine("Suma stron A4 (metrycznie): {0}", _strony.SumaStronA4Metrycznie());
-            var formaty = _strony.ZestawienieStronA4Metrycznie();
+            var formats = Formats.Split(',');
+            Console.WriteLine("Suma stron A4 (metrycznie): {0}", _strony.SumaStronA4Metrycznie(formats));
+            var formaty = _strony.ZestawienieStronA4Metrycznie(formats);
             PokażZestawienieFormatów(formaty);
         }
 
@@ -81,11 +82,12 @@ namespace StronyA4
 
         void PokażZestawienieFormatów(Dictionary<string, List<IStrona>> formaty)
         {
-            Console.WriteLine("Stron[y] formatu A0: {0}", formaty["A0"].Count);
-            Console.WriteLine("Stron[y] formatu A1: {0}", formaty["A1"].Count);
-            Console.WriteLine("Stron[y] formatu A2: {0}", formaty["A2"].Count);
-            Console.WriteLine("Stron[y] formatu A3: {0}", formaty["A3"].Count);
-            Console.WriteLine("Stron[y] formatu A4: {0}", formaty["A4"].Count);
+            foreach (var format in formaty)
+            {
+                var nazwa = format.Key;
+                var lista = format.Value;
+                Console.WriteLine("Stron[y] formatu {0}: {1}", nazwa, lista.Count);
+            }
         }
     }
 }
