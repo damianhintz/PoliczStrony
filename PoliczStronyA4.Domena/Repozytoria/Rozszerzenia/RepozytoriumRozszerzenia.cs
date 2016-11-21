@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using StronyA4.Domena.Encje.Rozszerzenia;
+using StronyA4.Domena.Abstrakcje;
+using StronyA4.Domena.Klasyfikacja;
+
+namespace StronyA4.Domena.Repozytoria.Rozszerzenia
+{
+    /// <summary>
+    /// Rozszerzenia repozytorium stron.
+    /// </summary>
+    public static class RepozytoriumRozszerzenia
+    {
+        /// <summary>
+        /// Oblicza sumę stron w przeliczeniu na A4, wykorzystując podobieństwo do standardowych formatów.
+        /// </summary>
+        /// <param name="strony"></param>
+        /// <returns></returns>
+        public static int SumaStronA4Metrycznie(this IRepozytoriumStron strony)
+        {
+            var klasyfikator = new MetrycznyKlasyfikatorStrony();
+            var sumaStron = strony.Strony.Sum(s => klasyfikator.UstalFormatStrony(s).StronyA4);
+            return (int)sumaStron;
+        }
+
+        public static Dictionary<string, List<IStrona>> ZestawienieStronA4Metrycznie(this IRepozytoriumStron strony)
+        {
+            var klasyfikator = new MetrycznyKlasyfikatorStrony();
+            var zestawienie = new Dictionary<string, List<IStrona>>();
+            foreach (var f in klasyfikator.Formaty) zestawienie.Add(f.Nazwa, new List<IStrona>());
+            foreach (var s in strony.Strony)
+            {
+                var f = klasyfikator.UstalFormatStrony(s);
+                zestawienie[f.Nazwa].Add(s);
+            }
+            return zestawienie;
+        }
+
+        /// <summary>
+        /// Oblicza sumę stron w przeliczeniu na A4, na podstawie stosunku całkowitej powierzchni stron do powierzchni standardowej strony A4.
+        /// </summary>
+        /// <param name="strony"></param>
+        /// <returns></returns>
+        public static int SumaStronA4Powierzchniowo(this IRepozytoriumStron strony)
+        {
+            var klasyfikator = new MetrycznyKlasyfikatorStrony();
+            var sumaPowierzchni = strony.Strony.Sum(s => (long)s.Szerokość.Pixels * (long)s.Wysokość.Pixels);
+            var formatA4 = StandardoweFormaty.FormatA4;
+            var powierzchniaA4 = formatA4.Szerokość.Pixels * formatA4.Wysokość.Pixels;
+            return (int)(sumaPowierzchni / powierzchniaA4);
+        }
+    }
+}

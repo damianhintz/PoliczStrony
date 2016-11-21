@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using StronyA4.Domena.Encje;
 
 namespace StronyA4.Domena.Abstrakcje
 {
-    public interface IStrona
+    public interface IStrona : IWymiarowalny
     {
         string Plik { get; set; }
         int Numer { get; set; }
-        //RozmiarStrony Rozmiar {get;set;}
-        //Rozdzielczość Rozdzielczość { get; set; }
         //DateTime Data { get; set; }
     }
 }

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using StronyA4.Domena.Abstrakcje;
+using StronyA4.Domena.Encje;
 
-namespace StronyA4.Domena
+namespace StronyA4.Domena.Klasyfikacja
 {
     /// <summary>
     /// Klasyfikator formatu strony na podstawie stosunku jej powierzchni do powierzchni formatu A4.
     /// </summary>
     class PowierzchniowyKlasyfikatorStrony : IKlasyfikatorStrony
     {
-        public FormatStrony UstalFormatStrony(RozmiarStrony rozmiar)
+        public FormatStrony UstalFormatStrony(IWymiarowalny strona)
         {
-            var szerokość = rozmiar.Szerokość;
-            var wysokość = rozmiar.Wysokość;
+            var szerokość = strona.Szerokość.Mm;
+            var wysokość = strona.Wysokość.Mm;
             var stronyA4 = Math.Min(A4(szerokość, wysokość), A4(wysokość, szerokość));
             var nazwa = "A4";
             if (stronyA4 > 8) nazwa = "A0";

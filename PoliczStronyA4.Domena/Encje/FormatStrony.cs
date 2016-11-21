@@ -2,20 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using StronyA4.Domena.Abstrakcje;
 
 namespace StronyA4.Domena.Encje
 {
-    public class FormatStrony
+    public class FormatStrony : IWymiarowalny
     {
         /// <summary>
-        /// Standardowa nazwa formatu (A0, A1, A2, ...).
+        /// Standardowa nazwa formatu (A0, A1, A2, A3, A4, A5, A6,...).
         /// </summary>
         public string Nazwa { get; set; }
+        
+        /// <summary>
+        /// Szerokość.
+        /// </summary>
+        public WymiarStrony Szerokość { get; set; }
 
         /// <summary>
-        /// Standardowy rozmiar danego formatu w milimetrach.
+        /// Wysokość.
         /// </summary>
-        public RozmiarStrony Rozmiar { get; set; }
+        public WymiarStrony Wysokość { get; set; }
 
         /// <summary>
         /// Liczba stron w przeliczeniu na format A4.

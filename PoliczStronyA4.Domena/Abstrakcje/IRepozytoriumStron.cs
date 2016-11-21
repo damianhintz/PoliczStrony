@@ -9,7 +9,6 @@ namespace StronyA4.Domena.Abstrakcje
     {
         IEnumerable<string> Pliki { get; }
         IQueryable<IStrona> Strony { get; }
-        void ZapiszZmiany();
         void Dodaj(IStrona strona);
     }
 }

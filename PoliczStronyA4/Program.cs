@@ -1,107 +1,94 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
-using StronyA4.Domena;
+using StronyA4.Properties;
 using StronyA4.Domena.Abstrakcje;
 using StronyA4.Domena.Repozytoria;
+using StronyA4.Domena.Repozytoria.Rozszerzenia;
 
 namespace StronyA4
 {
+    /// <summary>
+    /// StronyA4.exe folder:"" fileType:*.jpg lub *.pdf formats:A0,A1,A2,A3,A4
+    /// </summary>
     class Program
     {
-        static string _roboczyKatalog;
-        static string[] _pliki;
-        readonly Encoding _kodowanie;
-        static IKlasyfikatorStrony analizator = new MetrycznyKlasyfikatorStrony();
-        static List<string> _błędy = new List<string>();
+        string _folder;
+        string _fileType = Settings.Default.FileType;
+        string _formats = Settings.Default.Formaty;
+        IRepozytoriumStron _strony = new RepozytoriumStron();
 
-        public Program(string roboczyKatalog, int stronaKodowa)
+        public Program(string folder)
         {
-            _roboczyKatalog = roboczyKatalog;
-            _pliki = Directory.GetFiles(_roboczyKatalog, "*.pdf", SearchOption.AllDirectories);
-            _kodowanie = Encoding.GetEncoding(stronaKodowa);
+            _folder = folder;
         }
 
-        static void PokażLogo()
+        void PokażLogo()
         {
-            Console.WriteLine("PoliczStronyA4 v1.3.2 - Policz strony A4 w plikach pdf");
-            Console.WriteLine("Data publikacji: 21 września 2015");
-            Console.WriteLine("Roboczy katalog: {0}", _roboczyKatalog == null ? "nie określono katalogu, obliczanie z pliku tab" : _roboczyKatalog);
+            Console.WriteLine("StronyA4 v1.4-beta - Policz strony A4 w plikach pdf lub jpg");
+            Console.WriteLine("Data publikacji: 21 listopada 2016");
+            Console.WriteLine("Roboczy katalog: {0}", _folder == null ? "nie określono katalogu, obliczanie z pliku tab" : _folder);
         }
 
         static void Main(string[] args)
         {
-            PokażLogo();
-            if (args.Length == 0)
-            {
-                PoliczStronyZPliku();
-            }
-            else
-            {
-                var program = new Program(args[0], 1250);
-                PoliczStronyWKatalogu();
-            }
-            Console.WriteLine("Koniec.");
+            var program = new Program(folder: args[0]);
+            program.PokażLogo();
+            if (args.Length == 0) program.PoliczStronyCached();
+            else program.PoliczStronyFolderu(fileType: args[1]);
+            program.PokażPodsumowanie();
             Console.Read();
         }
 
-        static void PoliczStronyWKatalogu()
+        void PoliczStronyFolderu(string fileType)
         {
-            var strony = new PlikoweRepozytoriumStron("PoliczStronyA4.tab");
-            var czytnik = new CzytnikPlikówPdf(strony);
-            czytnik.Wczytaj(_roboczyKatalog);
-            strony.ZapiszZmiany();
-            Console.WriteLine("Podsumowanie:");
-            Console.WriteLine("Liczba plików: {0}", strony.Pliki.Count());
-            Console.WriteLine("Suma stron: {0}", strony.Strony.Count());
-            //Console.WriteLine("Suma stron A4: {0}", zliczacz.SumaStronA4);
-            if (_błędy.Count > 0)
-            {
-                Console.WriteLine("Błędy: {0} (error.log)", _błędy.Count);
-                File.WriteAllLines("error.log", _błędy);
-            }
+            _fileType = fileType;
+            ICzytnikPlików czytnik = null;
+            if (fileType.Equals("*.pdf")) czytnik = new CzytnikPlikówPdf(_strony);
+            else if (fileType.Equals("*.jpg")) czytnik = new CzytnikPlikówJpg(_strony);
+            else throw new NotImplementedException("Brak implementacji importera plików typu: " + fileType);
+            czytnik.Wczytaj(_folder);
+            //strony.ZapiszZmiany();
         }
 
-        static void PoliczStronyZPliku()
+        void PoliczStronyCached()
         {
-            var linie = File.ReadAllLines("PoliczStronyA4.tab", Encoding.GetEncoding(1250));
-            var sumaStronA4 = 0.0;
-            var formaty = new Dictionary<string, int>();
-            formaty.Add("A0", 0);
-            formaty.Add("A1", 0);
-            formaty.Add("A2", 0);
-            formaty.Add("A3", 0);
-            formaty.Add("A4", 0);
-            var lines = new List<string>();
-            foreach (var linia in linie.Skip(1))
-            {
-                var pola = linia.Split('\t');
-                var szerokośćMilimetry = int.Parse(pola[4]);
-                var wysokośćMilimetry = int.Parse(pola[5]);
-                var rozmiarStrony = new RozmiarStrony
-                {
-                    Szerokość = szerokośćMilimetry,
-                    Wysokość = wysokośćMilimetry
-                };
-                var formatStrony = analizator.UstalFormatStrony(rozmiarStrony);
-                sumaStronA4 += formatStrony.StronyA4;
-                formaty[formatStrony.Nazwa]++;
-                lines.Add(string.Format("{0:F0}\t{1:F0}",
-                    Math.Max(szerokośćMilimetry, wysokośćMilimetry),
-                    Math.Min(szerokośćMilimetry, wysokośćMilimetry)));
-            }
-            File.WriteAllLines("PoliczStronyA4.log", lines, Encoding.GetEncoding(1250));
-            Console.WriteLine("Suma stron: {0}", linie.Length - 1);
-            Console.WriteLine("Suma stron A4: {0}", sumaStronA4);
-            Console.WriteLine("Stron[y] formatu A0: {0}", formaty["A0"]);
-            Console.WriteLine("Stron[y] formatu A1: {0}", formaty["A1"]);
-            Console.WriteLine("Stron[y] formatu A2: {0}", formaty["A2"]);
-            Console.WriteLine("Stron[y] formatu A3: {0}", formaty["A3"]);
-            Console.WriteLine("Stron[y] formatu A4: {0}", formaty["A4"]);
+            var czytnik = new CzytnikRepozytorium(_strony);
+            var fileName = "StronyA4.tab";
+            czytnik.Wczytaj(fileName);
+        }
+
+        void PokażPodsumowanie()
+        {
+            Console.WriteLine("Liczba plików ({0}): {1}", _fileType, _strony.Pliki.Count());
+            Console.WriteLine("Suma stron: {0}", _strony.Strony.Count());
+            PokażZestawienieMetryczne();
+            PokażZestawieniePowierzchniowe();
             Console.WriteLine("Koniec.");
-            Console.Read();
+        }
+
+        void PokażZestawienieMetryczne()
+        {
+            Console.WriteLine("Suma stron A4 (metrycznie): {0}", _strony.SumaStronA4Metrycznie());
+            var formaty = _strony.ZestawienieStronA4Metrycznie();
+            PokażZestawienieFormatów(formaty);
+        }
+
+        void PokażZestawieniePowierzchniowe()
+        {
+            Console.WriteLine("Suma stron A4 (powierzchniowo): {0}", _strony.SumaStronA4Powierzchniowo());
+            //var formaty = _strony.ZestawienieStronA4Powierzchniowo();
+            //PokażZestawienieFormatów(formaty);
+        }
+
+        void PokażZestawienieFormatów(Dictionary<string, List<IStrona>> formaty)
+        {
+            Console.WriteLine("Stron[y] formatu A0: {0}", formaty["A0"].Count);
+            Console.WriteLine("Stron[y] formatu A1: {0}", formaty["A1"].Count);
+            Console.WriteLine("Stron[y] formatu A2: {0}", formaty["A2"].Count);
+            Console.WriteLine("Stron[y] formatu A3: {0}", formaty["A3"].Count);
+            Console.WriteLine("Stron[y] formatu A4: {0}", formaty["A4"].Count);
         }
     }
 }

@@ -2,31 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using StronyA4.Domena.Abstrakcje;
+using StronyA4.Domena.Encje.Rozszerzenia;
 
 namespace StronyA4.Domena.Encje
 {
     /// <summary>
     /// Rozmiar strony.
     /// </summary>
-    public class RozmiarStrony
+    public class RozmiarStrony : IWymiarowalny
     {
-        public long Szerokość { get; set; }
-        public long Wysokość { get; set; }
+        public WymiarStrony Szerokość { get; set; }
+        public WymiarStrony Wysokość { get; set; }
         
-        public RozmiarStrony FromPixels(long width, long height, int dpiX, int dpiY)
+        public static RozmiarStrony RozmiarFromPixels(int width, int height, int dpiX, int dpiY)
         {
             return new RozmiarStrony
             {
-                Szerokość = FromPixels(width, dpiX),
-                Wysokość = FromPixels(height, dpiY)
+                Szerokość = width.WymiarFromPixels(dpiX),
+                Wysokość = height.WymiarFromPixels(dpiY)
             };
         }
 
-        long FromPixels(long pixels, long dpi)
+        public static RozmiarStrony RozmiarFromMm(int width, int height)
         {
-            //cm = pixels * 2.54cm / 96dpi
-            //mm = pixels * 254mm / 96dpi
-            return pixels * 254 / dpi;
+            return new RozmiarStrony
+            {
+                Szerokość = width.WymiarFromMm(),
+                Wysokość = height.WymiarFromMm()
+            };
         }
     }
 }

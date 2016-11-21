@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StronyA4.Domena;
 using StronyA4.Domena.Repozytoria;
 using iTextSharp.text.exceptions;
+using Shouldly;
 
 namespace PoliczStrony.Testy.PoliczStronyA4
 {
@@ -11,49 +13,44 @@ namespace PoliczStrony.Testy.PoliczStronyA4
     public class CzytnikStronPdfTest
     {
         [TestMethod]
-        public void test_czy_plik_pdf_zawiera_14_stron_A4()
+        public void CzytnikStron_ShouldRead14PagesA4()
         {
-            var fileName = Path.Combine(@"..\..\Samples", "CzytnikStronPdfTest_14.pdf");
+            var fileName = "CzytnikStronPdfTest_14.pdf".GetSamplePath();
             var czytnik = new CzytnikStronPdf(fileName);
-            Assert.AreEqual(14, czytnik.LiczbaStron);
-            var nr = 0;
+            czytnik.Strony.Count().ShouldBe(14);
+            var nr = 1;
             foreach (var strona in czytnik.Strony)
             {
-                Assert.AreEqual(@"..\..\Samples\CzytnikStronPdfTest_14.pdf", strona.Plik);
-                Assert.AreEqual(++nr, strona.Numer);
+                strona.Plik.ShouldBe(fileName);
+                strona.Numer.ShouldBe(nr++);
+                strona.Szerokość.Mm.ShouldBe(210);
+                strona.Wysokość.Mm.ShouldBe(297);
                 //Assert.AreEqual(595, strona.Punkty.Szerokość);
                 //Assert.AreEqual(842, strona.Punkty.Wysokość);
-                Assert.AreEqual(210, strona.Rozmiar.Szerokość);
-                Assert.AreEqual(297, strona.Rozmiar.Wysokość);
-
             }
         }
 
         [TestMethod]
-        public void test_czy_plik_pdf_zawiera_1_stronę_A4()
+        public void CzytnikStron_ShouldRead1PageA4()
         {
-            var fileName = Path.Combine(@"..\..\Samples", "CzytnikStronPdfTest_1.pdf");
+            var fileName = "CzytnikStronPdfTest_1.pdf".GetSamplePath();
             var czytnik = new CzytnikStronPdf(fileName);
-            Assert.AreEqual(1, czytnik.LiczbaStron);
+            czytnik.Strony.Count().ShouldBe(1);
             var nr = 0;
             foreach (var strona in czytnik.Strony)
             {
-                Assert.AreEqual(@"..\..\Samples\CzytnikStronPdfTest_1.pdf", strona.Plik);
-                Assert.AreEqual(++nr, strona.Numer);
-                //Assert.AreEqual(595, strona.Punkty.Szerokość);
-                //Assert.AreEqual(842, strona.Punkty.Wysokość);
-                Assert.AreEqual(210, strona.Rozmiar.Szerokość);
-                Assert.AreEqual(297, strona.Rozmiar.Wysokość);
-
+                strona.Plik.ShouldBe(fileName);
+                strona.Numer.ShouldBe(++nr);
+                strona.Szerokość.Mm.ShouldBe(210);
+                strona.Wysokość.Mm.ShouldBe(297);
             }
         }
 
-        [TestMethod, ExpectedException(typeof(InvalidPdfException))]
-        public void test_czy_niepoprawny_plik_pdf_rzuci_wyjątek()
+        [TestMethod]
+        public void CzytnikStron_ShouldThrowInvalidPdf()
         {
-            var fileName = Path.Combine(@"..\..\Samples", "CzytnikStronPdfTest_0.pdf");
-            var czytnik = new CzytnikStronPdf(fileName);
-            Assert.Fail();
+            var fileName = "CzytnikStronPdfTest_0.pdf".GetSamplePath();
+            Should.Throw<InvalidPdfException>(() => new CzytnikStronPdf(fileName));
         }
     }
 }

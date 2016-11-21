@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StronyA4.Domena.Encje;
 
 namespace StronyA4.Domena.Abstrakcje
 {
-    public interface IKlasyfikatorStrony
+    public interface ICzytnikPlików
     {
-        FormatStrony UstalFormatStrony(IWymiarowalny strona);
+        IEnumerable<string> Pliki { get; }
+        void Wczytaj(string folder);
     }
 }

@@ -25,10 +25,22 @@ namespace StronyA4.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("A0 > 10000 | A1 > 7100 | A2 > 5100 | A3 > 1000 | A4 > 0")]
-        public string A {
+        [global::System.Configuration.DefaultSettingValueAttribute("2A0,A0,A1,A2,A3,A4,A5")]
+        public string Formaty {
             get {
-                return ((string)(this["A"]));
+                return ((string)(this["Formaty"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("*.jpg")]
+        public string FileType {
+            get {
+                return ((string)(this["FileType"]));
+            }
+            set {
+                this["FileType"] = value;
             }
         }
     }

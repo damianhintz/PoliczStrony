@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using StronyA4.Domena.Rozszerzenia;
+using StronyA4.Domena.Encje.Rozszerzenia;
 using StronyA4.Domena.Encje;
 
 namespace StronyA4.Domena.Repozytoria
@@ -36,24 +36,15 @@ namespace StronyA4.Domena.Repozytoria
 
         StronaObrazu OdczytajStronę(int numerStrony)
         {
-            Rectangle size = _pdf.GetPageSize(numerStrony);
-            var rozmiarPunkty = new RozmiarStrony
-            {
-                Szerokość = size.Width.ToInt(),
-                Wysokość = size.Height.ToInt()
-            };
-            var szerokośćMilimetry = rozmiarPunkty.Szerokość * 0.3528;
-            var wysokośćMilimetry = rozmiarPunkty.Wysokość * 0.3528;
-            var rozmiarMilimetry = new RozmiarStrony
-            {
-                Szerokość = szerokośćMilimetry.ToInt(),
-                Wysokość = wysokośćMilimetry.ToInt()
-            };
+            var size = _pdf.GetPageSize(numerStrony);
+            var szerokość = size.Width.WymiarFromPoints();
+            var wysokość = size.Height.WymiarFromPoints();
             var strona = new StronaObrazu
             {
                 Plik = _fileName,
                 Numer = numerStrony,
-                Rozmiar = rozmiarMilimetry
+                Szerokość = szerokość,
+                Wysokość = wysokość
             };
             return strona;
         }

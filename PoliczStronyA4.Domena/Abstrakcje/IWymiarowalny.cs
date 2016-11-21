@@ -6,8 +6,9 @@ using StronyA4.Domena.Encje;
 
 namespace StronyA4.Domena.Abstrakcje
 {
-    public interface IKlasyfikatorStrony
+    public interface IWymiarowalny
     {
-        FormatStrony UstalFormatStrony(IWymiarowalny strona);
+        WymiarStrony Szerokość { get; }
+        WymiarStrony Wysokość { get; }
     }
 }

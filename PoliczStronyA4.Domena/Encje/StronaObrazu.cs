@@ -20,13 +20,8 @@ namespace StronyA4.Domena.Encje
         /// Numer strony w pliku.
         /// </summary>
         public int Numer { get; set; }
-
-        /// <summary>
-        /// Rozmiar strony w milimetrach.
-        /// </summary>
-        public RozmiarStrony Rozmiar { get; set; }
-
-        //public RozmiarStrony Piksele { get; set; }
-        //public RozmiarStrony Punkty { get; set; }
+        
+        public WymiarStrony Szerokość { get; set; }
+        public WymiarStrony Wysokość { get; set; }
     }
 }
