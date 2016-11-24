@@ -54,12 +54,20 @@ namespace StronyA4.Domena.Repozytoria.Rozszerzenia
             return (int)(sumaPowierzchni / powierzchniaA4);
         }
 
+        public static int SumaStronA4Powierzchniowo(this IRepozytoriumStron strony, params string[] formaty)
+        {
+            var klasyfikator = new PowierzchniowyKlasyfikatorStrony();
+            foreach (var format in formaty) klasyfikator.DodajFormat(format);
+            var sumaStron = strony.Strony.Sum(s => klasyfikator.UstalFormatStrony(s).StronyA4);
+            return (int)sumaStron;
+        }
+
         public static Dictionary<string, List<IStrona>> ZestawienieStronA4Powierzchniowo(this IRepozytoriumStron strony, params string[] formaty)
         {
             var klasyfikator = new PowierzchniowyKlasyfikatorStrony();
-            //foreach (var format in formaty) klasyfikator.DodajFormat(format);
+            foreach (var format in formaty) klasyfikator.DodajFormat(format);
             var zestawienie = new Dictionary<string, List<IStrona>>();
-            //foreach (var f in klasyfikator.Formaty) zestawienie.Add(f.Nazwa, new List<IStrona>());
+            foreach (var f in klasyfikator.Formaty) zestawienie.Add(f.Nazwa, new List<IStrona>());
             foreach (var s in strony.Strony)
             {
                 var f = klasyfikator.UstalFormatStrony(s);

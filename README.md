@@ -1,4 +1,4 @@
-﻿StronyA4 v1.4-beta, 21 listopada 2016
+﻿StronyA4 v1.5-beta, 24 listopada 2016
 ---
 Policz strony A4 w plikach pdf lub jpg
 
@@ -6,6 +6,8 @@ Policz strony A4 w plikach pdf lub jpg
 
 * zliczanie stron A4 w plikach pdf (strony mniejsze od A4 traktowane są jak jedna strona A4)
 * zliczanie stron A4 w plikach jpg
+* klasyfikacja na podstawie metryki odległości do standardowych formatów
+* klasyfikacja na podstawie stosunku powierzchni do standardowego formatu A4
 
 # Pomoc
 
@@ -24,6 +26,10 @@ StronyA4.exe c:\Strony *.jpg A0,A1,A2,A3,A4
 # Historia
 
 Do zrobienia
+
+2016-11-24 v1.5-beta
+
+* nowość: klasyfikacja na podstawie stosunku powierzchni do standardowego formatu A4
 
 2016-11-21 v1.4-beta
 

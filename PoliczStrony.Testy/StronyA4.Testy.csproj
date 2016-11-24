@@ -60,11 +60,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="KlasyfikatorStronyTest.cs" />
+    <Compile Include="MetrycznyKlasyfikatorTest.cs" />
     <Compile Include="FormatStronyTest.cs" />
     <Compile Include="CzytnikStronPdfTest.cs" />
     <Compile Include="StronaTest.cs" />
     <Compile Include="TestRozszerzenia.cs" />
+    <Compile Include="PowierzchniowyKlasyfikatorTest.cs" />
     <Compile Include="WymiarStronyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozytoriumStronTest.cs" />

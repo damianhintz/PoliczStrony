@@ -8,6 +8,9 @@ namespace StronyA4.Domena.Abstrakcje
 {
     public interface IKlasyfikatorStrony
     {
+        IEnumerable<FormatStrony> Formaty { get; }
         FormatStrony UstalFormatStrony(IWymiarowalny strona);
+        void DodajFormat(string nazwa);
+        void DodajFormat(FormatStrony format);
     }
 }

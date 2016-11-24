@@ -15,7 +15,7 @@ using Shouldly;
 namespace PoliczStrony.Testy
 {
     [TestClass]
-    public class KlasyfikatorStronyTest
+    public class MetrycznyKlasyfikatorTest
     {
         [TestMethod]
         public void MetrycznyKlasyfikator_ShouldContainAddedFormat()

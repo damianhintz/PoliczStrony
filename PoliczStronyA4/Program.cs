@@ -18,11 +18,11 @@ namespace StronyA4
         public string FileType = Settings.Default.FileType;
         public string Formats = Settings.Default.Formaty;
         IRepozytoriumStron _strony = new RepozytoriumStron();
-        
+
         void PokażLogo()
         {
-            Console.WriteLine("StronyA4 v1.4-beta - Policz strony A4 w plikach pdf lub jpg");
-            Console.WriteLine("Data publikacji: 21 listopada 2016");
+            Console.WriteLine("StronyA4 v1.5-beta - Policz strony A4 w plikach pdf lub jpg");
+            Console.WriteLine("Data publikacji: 24 listopada 2016");
         }
 
         static void Main(string[] args)
@@ -68,16 +68,18 @@ namespace StronyA4
         void PokażZestawienieMetryczne()
         {
             var formats = Formats.Split(',');
-            Console.WriteLine("Suma stron A4 (metrycznie): {0}", _strony.SumaStronA4Metrycznie(formats));
+            Console.WriteLine("Suma stron A4 (liczba stron standardowego formatu): {0}", _strony.SumaStronA4Metrycznie(formats));
             var formaty = _strony.ZestawienieStronA4Metrycznie(formats);
             PokażZestawienieFormatów(formaty);
         }
 
         void PokażZestawieniePowierzchniowe()
         {
-            Console.WriteLine("Suma stron A4 (powierzchniowo): {0}", _strony.SumaStronA4Powierzchniowo());
-            //var formaty = _strony.ZestawienieStronA4Powierzchniowo();
-            //PokażZestawienieFormatów(formaty);
+            var formats = Formats.Split(',');
+            Console.WriteLine("Suma stron A4 (całkowita powierzchnia/powierzchnia A4): {0}", _strony.SumaStronA4Powierzchniowo());
+            Console.WriteLine("Suma stron A4 (powierzchnia strony / powierzchnia A4): {0}", _strony.SumaStronA4Powierzchniowo(formats));
+            var formaty = _strony.ZestawienieStronA4Powierzchniowo(formats);
+            PokażZestawienieFormatów(formaty);
         }
 
         void PokażZestawienieFormatów(Dictionary<string, List<IStrona>> formaty)
