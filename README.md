@@ -1,4 +1,4 @@
-﻿StronyA4 v1.5-beta, 24 listopada 2016
+﻿StronyA4 v1.6-beta, 22 grudnia 2016
 ---
 Policz strony A4 w plikach pdf lub jpg
 
@@ -26,6 +26,10 @@ StronyA4.exe c:\Strony *.jpg A0,A1,A2,A3,A4
 # Historia
 
 Do zrobienia
+
+2016-12-22 v1.6
+
+* nowość: raport z listą stron
 
 2016-11-24 v1.5-beta
 

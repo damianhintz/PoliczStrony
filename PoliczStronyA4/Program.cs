@@ -21,8 +21,8 @@ namespace StronyA4
 
         void PokażLogo()
         {
-            Console.WriteLine("StronyA4 v1.5-beta - Policz strony A4 w plikach pdf lub jpg");
-            Console.WriteLine("Data publikacji: 24 listopada 2016");
+            Console.WriteLine("StronyA4 v1.6 - Policz strony A4 w plikach pdf lub jpg");
+            Console.WriteLine("Data publikacji: 22 grudnia 2016");
         }
 
         static void Main(string[] args)
@@ -62,6 +62,8 @@ namespace StronyA4
             Console.WriteLine("Suma stron: {0}", _strony.Strony.Count());
             PokażZestawienieMetryczne();
             PokażZestawieniePowierzchniowe();
+            var writer = new EksporterRepozytorium(_strony);
+            writer.ZapiszZmiany("StronyA4.log");
             Console.WriteLine("Koniec.");
         }
 
@@ -77,7 +79,7 @@ namespace StronyA4
         {
             var formats = Formats.Split(',');
             Console.WriteLine("Suma stron A4 (całkowita powierzchnia/powierzchnia A4): {0}", _strony.SumaStronA4Powierzchniowo());
-            Console.WriteLine("Suma stron A4 (powierzchnia strony / powierzchnia A4): {0}", _strony.SumaStronA4Powierzchniowo(formats));
+            Console.WriteLine("Suma stron A4 (powierzchnia strony/powierzchnia A4): {0}", _strony.SumaStronA4Powierzchniowo(formats));
             var formaty = _strony.ZestawienieStronA4Powierzchniowo(formats);
             PokażZestawienieFormatów(formaty);
         }

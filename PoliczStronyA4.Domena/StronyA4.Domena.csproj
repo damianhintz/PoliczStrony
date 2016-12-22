@@ -57,7 +57,7 @@
     <Compile Include="Repozytoria\CzytnikPlikówJpg.cs" />
     <Compile Include="Repozytoria\CzytnikRepozytorium.cs" />
     <Compile Include="Repozytoria\CzytnikStronPdf.cs" />
-    <Compile Include="Repozytoria\EksporterRepozytrium.cs" />
+    <Compile Include="Repozytoria\EksporterRepozytorium.cs" />
     <Compile Include="Repozytoria\RepozytoriumStron.cs" />
     <Compile Include="Encje\FormatStrony.cs" />
     <Compile Include="Abstrakcje\IKlasyfikatorStrony.cs" />

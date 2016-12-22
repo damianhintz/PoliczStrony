@@ -7,6 +7,6 @@ namespace StronyA4.Domena.Abstrakcje
 {
     public interface IEksporterRepozytorium
     {
-        void ZapiszZmiany(string connectionString);
+        IEnumerable<string> ZapiszZmiany(string fileName);
     }
 }
