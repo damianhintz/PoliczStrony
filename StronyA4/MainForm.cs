@@ -68,6 +68,7 @@ namespace StronyA4
             var folder = new FolderStron { Folder = browser.SelectedPath };
             _foldery.Add(folder);
             folderView.VirtualListSize = _foldery.Count;
+            //Settings.Default.Profile.ZapiszProfil
         }
 
         private void odświeżMenuItem_Click(object sender, EventArgs e)

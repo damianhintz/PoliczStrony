@@ -30,10 +30,13 @@ Do zrobienia
 * [ ] interfejs graficzny
 * [ ] zliczanie plików pdf
 * [ ] wykorzystanie uczenia maszynowego do klasyfikacji
+* [ ] autozapis profilu po dodaniu folderu
+* [ ] autozapis profilu po wczytaniu folderu
+* [ ] pamięć podręczna wczytanych plików w folderze StronyA4.tab
 
 2017-01-19 v1.7-beta
 
-* nowość: profile folderów
+* nowość: wczytanie domyślnego profilu Profile\Default.json
 
 2016-12-22 v1.6
 
