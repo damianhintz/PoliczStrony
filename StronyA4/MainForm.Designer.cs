@@ -97,7 +97,8 @@
             // dodajFolderMenuItem
             // 
             this.dodajFolderMenuItem.Name = "dodajFolderMenuItem";
-            this.dodajFolderMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.dodajFolderMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.dodajFolderMenuItem.Size = new System.Drawing.Size(191, 22);
             this.dodajFolderMenuItem.Text = "Dodaj folder...";
             this.dodajFolderMenuItem.ToolTipText = "Wybierz folder z plikami do zliczenia stron A4";
             this.dodajFolderMenuItem.Click += new System.EventHandler(this.dodajFolderMenuItem_Click);
@@ -105,12 +106,13 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
             // 
             // zakończMenuItem
             // 
             this.zakończMenuItem.Name = "zakończMenuItem";
-            this.zakończMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.zakończMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.zakończMenuItem.Size = new System.Drawing.Size(191, 22);
             this.zakończMenuItem.Text = "Zakończ";
             this.zakończMenuItem.Click += new System.EventHandler(this.zakończMenuItem_Click);
             // 
@@ -129,32 +131,33 @@
             // zaznaczWszystkoToolStripMenuItem
             // 
             this.zaznaczWszystkoToolStripMenuItem.Name = "zaznaczWszystkoToolStripMenuItem";
-            this.zaznaczWszystkoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.zaznaczWszystkoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.zaznaczWszystkoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.zaznaczWszystkoToolStripMenuItem.Text = "Zaznacz wszystko";
             // 
             // zaznaczNoweToolStripMenuItem
             // 
             this.zaznaczNoweToolStripMenuItem.Name = "zaznaczNoweToolStripMenuItem";
-            this.zaznaczNoweToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.zaznaczNoweToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.zaznaczNoweToolStripMenuItem.Text = "Zaznacz nowe";
             this.zaznaczNoweToolStripMenuItem.ToolTipText = "Zaznacz foldery, dla których nie zliczano jeszcze stron";
             // 
             // zaznaczNieaktualneToolStripMenuItem
             // 
             this.zaznaczNieaktualneToolStripMenuItem.Name = "zaznaczNieaktualneToolStripMenuItem";
-            this.zaznaczNieaktualneToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.zaznaczNieaktualneToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.zaznaczNieaktualneToolStripMenuItem.Text = "Zaznacz nieaktualne";
             this.zaznaczNieaktualneToolStripMenuItem.ToolTipText = "Zaznacz fodlery, dla których zliczano strony, ale dawno temu";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(205, 6);
             // 
             // odwróćZaznaczenieToolStripMenuItem
             // 
             this.odwróćZaznaczenieToolStripMenuItem.Name = "odwróćZaznaczenieToolStripMenuItem";
-            this.odwróćZaznaczenieToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.odwróćZaznaczenieToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.odwróćZaznaczenieToolStripMenuItem.Text = "Odwróć zaznaczenie";
             // 
             // pomocMenuItem
@@ -168,10 +171,11 @@
             // czytajToMenuItem
             // 
             this.czytajToMenuItem.Name = "czytajToMenuItem";
-            this.czytajToMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.czytajToMenuItem.Size = new System.Drawing.Size(152, 22);
             this.czytajToMenuItem.Tag = "README.md";
             this.czytajToMenuItem.Text = "Czytaj to";
             this.czytajToMenuItem.ToolTipText = "README.md";
+            this.czytajToMenuItem.Click += new System.EventHandler(this.czytajToMenuItem_Click);
             // 
             // status
             // 
@@ -207,7 +211,7 @@
             this.usuńFolderMenuItem});
             this.folderMenu.Name = "folderMenu";
             this.folderMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.folderMenu.Size = new System.Drawing.Size(153, 176);
+            this.folderMenu.Size = new System.Drawing.Size(153, 154);
             // 
             // odświeżMenuItem
             // 

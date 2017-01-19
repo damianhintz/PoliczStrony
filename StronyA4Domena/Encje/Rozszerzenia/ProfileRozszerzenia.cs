@@ -20,7 +20,11 @@ namespace StronyA4Domena.Encje.Rozszerzenia
             return JsonConvert.DeserializeObject<Profile>(json);
         }
 
-
+        /// <summary>
+        /// Zapisz profil do pliku json.
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="profil"></param>
         public static void ZapiszProfil(this string fileName, Profile profil)
         {
             var json = JsonConvert.SerializeObject(profil);

@@ -10,6 +10,7 @@ using StronyA4Domena.Encje.Rozszerzenia;
 using StronyA4Domena.Abstrakcje;
 using StronyA4Domena.Repozytoria;
 using System.Diagnostics;
+using System.IO;
 
 namespace StronyA4
 {
@@ -131,6 +132,13 @@ namespace StronyA4
             if (items.Count() != 1) return;
             var item = items.Single();
             Process.Start(item.Folder);
+        }
+
+        private void czytajToMenuItem_Click(object sender, EventArgs e)
+        {
+            var fileName = (sender as ToolStripItem).Tag as string;
+            if (!File.Exists(fileName)) return;
+            Process.Start(fileName);
         }
     }
 }
