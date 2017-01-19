@@ -9,6 +9,7 @@ using StronyA4Domena.Encje;
 using StronyA4Domena.Encje.Rozszerzenia;
 using StronyA4Domena.Abstrakcje;
 using StronyA4Domena.Repozytoria;
+using System.Diagnostics;
 
 namespace StronyA4
 {
@@ -122,6 +123,14 @@ namespace StronyA4
                 text: "Usunięte foldery: " + items.Count() +
                 "\nKoniec.",
                 caption: (sender as ToolStripItem).Text);
+        }
+
+        private void pokażFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var items = Zaznaczone;
+            if (items.Count() != 1) return;
+            var item = items.Single();
+            Process.Start(item.Folder);
         }
     }
 }

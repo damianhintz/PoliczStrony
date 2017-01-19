@@ -27,13 +27,10 @@ StronyA4.exe c:\Strony *.jpg A0,A1,A2,A3,A4
 
 Do zrobienia
 
-* [ ] interfejs graficzny
-* [ ] zliczanie plików pdf
 * [ ] pytanie czy zliczać pliki, bo może zająć dużo czasu
 * [ ] pytanie czy usuwać folder, bo zostaną utracone dane
 * [ ] wykorzystanie uczenia maszynowego do klasyfikacji
 * [ ] pamięć podręczna wczytanych plików w folderze StronyA4.tab
-* [ ] otwieranie folderu w eksploratorze plików
 
 2017-01-19 v1.7-beta
 
@@ -41,6 +38,7 @@ Do zrobienia
 * nowość: autozapis profilu po dodaniu folderu
 * nowość: autozapis profilu po wczytaniu folderu
 * nowość: usuwanie folderu z profilu z autozapisem
+* nowość: otwieranie folderu w eksploratorze plików
 
 2016-12-22 v1.6
 

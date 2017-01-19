@@ -228,6 +228,7 @@
             this.pokażFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pokażFolderToolStripMenuItem.Text = "Pokaż folder";
             this.pokażFolderToolStripMenuItem.ToolTipText = "Otwórz folder w ekploratorze plików";
+            this.pokażFolderToolStripMenuItem.Click += new System.EventHandler(this.pokażFolderToolStripMenuItem_Click);
             // 
             // pokażPlikiToolStripMenuItem
             // 
