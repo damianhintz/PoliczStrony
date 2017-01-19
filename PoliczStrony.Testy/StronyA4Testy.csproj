@@ -6,8 +6,8 @@
     <ProjectGuid>{493B303F-2872-4860-A3E7-7563D11A69CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PoliczStrony.Testy</RootNamespace>
-    <AssemblyName>PoliczStrony.Testy</AssemblyName>
+    <RootNamespace>StronyA4Testy</RootNamespace>
+    <AssemblyName>StronyA4Testy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

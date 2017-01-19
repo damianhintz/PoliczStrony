@@ -12,7 +12,7 @@ using StronyA4.Domena.Repozytoria;
 using StronyA4.Domena.Repozytoria.Rozszerzenia;
 using Shouldly;
 
-namespace PoliczStrony.Testy
+namespace StronyA4Testy
 {
     [TestClass]
     public class MetrycznyKlasyfikatorTest

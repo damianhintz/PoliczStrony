@@ -6,7 +6,7 @@ using Shouldly;
 using StronyA4.Domena.Encje.Rozszerzenia;
 using StronyA4.Domena.Encje;
 
-namespace PoliczStrony.Testy
+namespace StronyA4Testy
 {
     [TestClass]
     public class PowierzchniowyKlasyfikatorTest

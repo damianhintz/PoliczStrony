@@ -10,7 +10,7 @@ using StronyA4.Domena.Encje;
 using StronyA4.Domena.Encje.Rozszerzenia;
 using System.IO;
 
-namespace PoliczStrony.Testy
+namespace StronyA4Testy
 {
     [TestClass]
     public class RepozytoriumStronTest

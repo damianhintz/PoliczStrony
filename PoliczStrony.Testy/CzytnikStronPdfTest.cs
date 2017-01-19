@@ -7,7 +7,7 @@ using StronyA4.Domena.Repozytoria;
 using iTextSharp.text.exceptions;
 using Shouldly;
 
-namespace PoliczStrony.Testy.PoliczStronyA4
+namespace StronyA4Testy
 {
     [TestClass]
     public class CzytnikStronPdfTest

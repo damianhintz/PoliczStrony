@@ -5,7 +5,7 @@ using StronyA4.Domena.Encje;
 using StronyA4.Domena.Encje.Rozszerzenia;
 using Shouldly;
 
-namespace PoliczStrony.Testy.PoliczStronyA4
+namespace StronyA4Testy
 {
     [TestClass]
     public class FormatStronyTest

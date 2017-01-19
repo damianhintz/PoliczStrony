@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Biblioteka testów aplikacji do zliczania stron A4")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OPGK Olsztyn")]
-[assembly: AssemblyProduct("PoliczStrony.Testy")]
-[assembly: AssemblyCopyright("Copyright © Damian Hintz 2015-2016")]
+[assembly: AssemblyProduct("StronyA4Testy")]
+[assembly: AssemblyCopyright("Copyright © Damian Hintz 2015-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

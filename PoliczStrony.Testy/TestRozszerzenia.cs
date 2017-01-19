@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace PoliczStrony.Testy
+namespace StronyA4Testy
 {
     static class TestRozszerzenia
     {
