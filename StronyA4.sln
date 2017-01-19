@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczArkusze", "PoliczArku
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4Testy", "StronyA4Testy\StronyA4Testy.csproj", "{493B303F-2872-4860-A3E7-7563D11A69CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4.Domena", "PoliczStronyA4.Domena\StronyA4.Domena.csproj", "{D10016E1-C25C-4415-81CE-1A1030968A22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4.Domena", "StronyA4Domena\StronyA4.Domena.csproj", "{D10016E1-C25C-4415-81CE-1A1030968A22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E029E91-9F61-4A69-9A2F-C1EC93D17B33}"
 	ProjectSection(SolutionItems) = preProject
