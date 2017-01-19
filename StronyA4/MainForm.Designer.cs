@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.plikMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajFolderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,9 +78,8 @@
             this.pomocMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menu.Size = new System.Drawing.Size(1070, 26);
+            this.menu.Size = new System.Drawing.Size(802, 24);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -90,13 +90,13 @@
             this.toolStripSeparator1,
             this.zakończMenuItem});
             this.plikMenuItem.Name = "plikMenuItem";
-            this.plikMenuItem.Size = new System.Drawing.Size(39, 22);
+            this.plikMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikMenuItem.Text = "Plik";
             // 
             // dodajFolderMenuItem
             // 
             this.dodajFolderMenuItem.Name = "dodajFolderMenuItem";
-            this.dodajFolderMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.dodajFolderMenuItem.Size = new System.Drawing.Size(148, 22);
             this.dodajFolderMenuItem.Text = "Dodaj folder...";
             this.dodajFolderMenuItem.ToolTipText = "Wybierz folder z plikami do zliczenia stron A4";
             this.dodajFolderMenuItem.Click += new System.EventHandler(this.dodajFolderMenuItem_Click);
@@ -104,12 +104,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
             // 
             // zakończMenuItem
             // 
             this.zakończMenuItem.Name = "zakończMenuItem";
-            this.zakończMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.zakończMenuItem.Size = new System.Drawing.Size(148, 22);
             this.zakończMenuItem.Text = "Zakończ";
             this.zakończMenuItem.Click += new System.EventHandler(this.zakończMenuItem_Click);
             // 
@@ -122,38 +122,38 @@
             this.toolStripSeparator3,
             this.odwróćZaznaczenieToolStripMenuItem});
             this.widokMenuItem.Name = "widokMenuItem";
-            this.widokMenuItem.Size = new System.Drawing.Size(59, 22);
+            this.widokMenuItem.Size = new System.Drawing.Size(53, 20);
             this.widokMenuItem.Text = "Widok";
             // 
             // zaznaczWszystkoToolStripMenuItem
             // 
             this.zaznaczWszystkoToolStripMenuItem.Name = "zaznaczWszystkoToolStripMenuItem";
-            this.zaznaczWszystkoToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.zaznaczWszystkoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.zaznaczWszystkoToolStripMenuItem.Text = "Zaznacz wszystko";
             // 
             // zaznaczNoweToolStripMenuItem
             // 
             this.zaznaczNoweToolStripMenuItem.Name = "zaznaczNoweToolStripMenuItem";
-            this.zaznaczNoweToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.zaznaczNoweToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.zaznaczNoweToolStripMenuItem.Text = "Zaznacz nowe";
             this.zaznaczNoweToolStripMenuItem.ToolTipText = "Zaznacz foldery, dla których nie zliczano jeszcze stron";
             // 
             // zaznaczNieaktualneToolStripMenuItem
             // 
             this.zaznaczNieaktualneToolStripMenuItem.Name = "zaznaczNieaktualneToolStripMenuItem";
-            this.zaznaczNieaktualneToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.zaznaczNieaktualneToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.zaznaczNieaktualneToolStripMenuItem.Text = "Zaznacz nieaktualne";
             this.zaznaczNieaktualneToolStripMenuItem.ToolTipText = "Zaznacz fodlery, dla których zliczano strony, ale dawno temu";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
             // 
             // odwróćZaznaczenieToolStripMenuItem
             // 
             this.odwróćZaznaczenieToolStripMenuItem.Name = "odwróćZaznaczenieToolStripMenuItem";
-            this.odwróćZaznaczenieToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.odwróćZaznaczenieToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.odwróćZaznaczenieToolStripMenuItem.Text = "Odwróć zaznaczenie";
             // 
             // pomocMenuItem
@@ -161,13 +161,13 @@
             this.pomocMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.czytajToMenuItem});
             this.pomocMenuItem.Name = "pomocMenuItem";
-            this.pomocMenuItem.Size = new System.Drawing.Size(64, 22);
+            this.pomocMenuItem.Size = new System.Drawing.Size(57, 20);
             this.pomocMenuItem.Text = "Pomoc";
             // 
             // czytajToMenuItem
             // 
             this.czytajToMenuItem.Name = "czytajToMenuItem";
-            this.czytajToMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.czytajToMenuItem.Size = new System.Drawing.Size(120, 22);
             this.czytajToMenuItem.Tag = "README.md";
             this.czytajToMenuItem.Text = "Czytaj to";
             this.czytajToMenuItem.ToolTipText = "README.md";
@@ -178,17 +178,16 @@
             this.status.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.status.Location = new System.Drawing.Point(0, 516);
+            this.status.Location = new System.Drawing.Point(0, 416);
             this.status.Name = "status";
-            this.status.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.status.Size = new System.Drawing.Size(1070, 23);
+            this.status.Size = new System.Drawing.Size(802, 22);
             this.status.TabIndex = 1;
             this.status.Text = "statusStrip1";
             // 
             // statusLabel
             // 
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(57, 18);
+            this.statusLabel.Size = new System.Drawing.Size(48, 17);
             this.statusLabel.Text = "Gotowe";
             // 
             // folderMenu
@@ -206,12 +205,12 @@
             this.usuńToolStripMenuItem});
             this.folderMenu.Name = "folderMenu";
             this.folderMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.folderMenu.Size = new System.Drawing.Size(177, 172);
+            this.folderMenu.Size = new System.Drawing.Size(153, 148);
             // 
             // odświeżMenuItem
             // 
             this.odświeżMenuItem.Name = "odświeżMenuItem";
-            this.odświeżMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.odświeżMenuItem.Size = new System.Drawing.Size(152, 22);
             this.odświeżMenuItem.Text = "Policz strony";
             this.odświeżMenuItem.ToolTipText = "Policz strony A4 w podanym folderze";
             this.odświeżMenuItem.Click += new System.EventHandler(this.odświeżMenuItem_Click);
@@ -219,51 +218,50 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // pokażFolderToolStripMenuItem
             // 
             this.pokażFolderToolStripMenuItem.Name = "pokażFolderToolStripMenuItem";
-            this.pokażFolderToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.pokażFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pokażFolderToolStripMenuItem.Text = "Pokaż folder";
             // 
             // pokażPlikiToolStripMenuItem
             // 
             this.pokażPlikiToolStripMenuItem.Name = "pokażPlikiToolStripMenuItem";
-            this.pokażPlikiToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.pokażPlikiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pokażPlikiToolStripMenuItem.Text = "Pokaż pliki";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // analizujToolStripMenuItem
             // 
             this.analizujToolStripMenuItem.Name = "analizujToolStripMenuItem";
-            this.analizujToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.analizujToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.analizujToolStripMenuItem.Text = "Analizuj";
             // 
             // zmieńMetodęToolStripMenuItem
             // 
             this.zmieńMetodęToolStripMenuItem.Name = "zmieńMetodęToolStripMenuItem";
-            this.zmieńMetodęToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.zmieńMetodęToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.zmieńMetodęToolStripMenuItem.Text = "Zmień metodę";
             // 
             // usuńToolStripMenuItem
             // 
             this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
             // 
             // panel
             // 
             this.panel.Controls.Add(this.folderView);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 26);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel.Location = new System.Drawing.Point(0, 24);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1070, 490);
+            this.panel.Size = new System.Drawing.Size(802, 392);
             this.panel.TabIndex = 3;
             // 
             // folderView
@@ -280,9 +278,8 @@
             this.folderView.FullRowSelect = true;
             this.folderView.HideSelection = false;
             this.folderView.Location = new System.Drawing.Point(0, 0);
-            this.folderView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.folderView.Name = "folderView";
-            this.folderView.Size = new System.Drawing.Size(1070, 490);
+            this.folderView.Size = new System.Drawing.Size(802, 392);
             this.folderView.TabIndex = 0;
             this.folderView.UseCompatibleStateImageBehavior = false;
             this.folderView.View = System.Windows.Forms.View.Details;
@@ -320,14 +317,14 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 539);
+            this.ClientSize = new System.Drawing.Size(802, 438);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.status);
             this.Controls.Add(this.menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "StronyA4 v1.7-beta - Zliczaj strony A4 (19 stycznia 2017)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

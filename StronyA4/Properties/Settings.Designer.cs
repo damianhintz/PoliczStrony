@@ -25,7 +25,7 @@ namespace StronyA4.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Profile\\default.json")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Profile\\Default.json")]
         public string Profile {
             get {
                 return ((string)(this["Profile"]));
