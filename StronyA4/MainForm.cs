@@ -28,12 +28,13 @@ namespace StronyA4
                 for (int i = 0; i < folderView.VirtualListSize; i++)
                 {
                     var item = folderView.Items[i] as FolderViewItem;
-                    items.Add(item);
+                    if (item.Selected) items.Add(item);
                 }
                 return items;
             }
         }
-        List<FolderStron> _foldery = new List<FolderStron>();
+        List<FolderStron> Foldery => _profile.Foldery;
+        Profile _profile;
 
         public MainForm()
         {
@@ -43,14 +44,15 @@ namespace StronyA4
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var profile = Settings.Default.Profile.WczytajProfil();
-            _foldery.AddRange(profile.Foldery);
-            folderView.VirtualListSize = _foldery.Count;
+            statusLabel.Text = "Wczytywanie profilu " + Settings.Default.Profile;
+            _profile = Settings.Default.Profile.WczytajProfil();
+            //Foldery.AddRange(_profile.Foldery);
+            folderView.VirtualListSize = Foldery.Count;
         }
 
         private void FolderView_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            var folder = _foldery[e.ItemIndex];
+            var folder = Foldery[e.ItemIndex];
             var item = new FolderViewItem(folder);
             e.Item = item;
         }
@@ -66,24 +68,31 @@ namespace StronyA4
             var result = browser.ShowDialog(this);
             if (result != DialogResult.OK) return; //Anulowano dodawanie folderu
             var folder = new FolderStron { Folder = browser.SelectedPath };
-            _foldery.Add(folder);
-            folderView.VirtualListSize = _foldery.Count;
-            //Settings.Default.Profile.ZapiszProfil
+            Foldery.Add(folder);
+            folderView.VirtualListSize = Foldery.Count;
+            statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
+            Settings.Default.Profile.ZapiszProfil(_profile);
         }
 
         private void odświeżMenuItem_Click(object sender, EventArgs e)
         {
             var items = Zaznaczone;
+            var pliki = 0;
             foreach (var item in items)
             {
-                PoliczStronyA4(item.FolderStron);
+                pliki += PoliczStronyA4(item.FolderStron);
                 item.Odśwież();
             }
-            MessageBox.Show(owner: this, 
-                text: "Koniec.", caption: (sender as ToolStripItem).Text);
+            statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
+            Settings.Default.Profile.ZapiszProfil(_profile);
+            MessageBox.Show(owner: this,
+                text: "Wczytane foldery: " + items.Count() +
+                "\nWczytane pliki: " + pliki +
+                "\nKoniec.",
+                caption: (sender as ToolStripItem).Text);
         }
 
-        void PoliczStronyA4(FolderStron folder)
+        int PoliczStronyA4(FolderStron folder)
         {
             IRepozytoriumStron strony = new RepozytoriumStron();
             ICzytnikPlików czytnik;
@@ -95,6 +104,7 @@ namespace StronyA4
             folder.Pliki = strony.Pliki.Count();
             folder.Strony = strony.Strony.Count();
             folder.Data = DateTime.Now;
+            return folder.Pliki;
         }
 
     }

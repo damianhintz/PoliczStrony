@@ -55,8 +55,8 @@
     <Compile Include="Abstrakcje\IStrona.cs" />
     <Compile Include="Abstrakcje\IWymiarowalny.cs" />
     <Compile Include="Encje\FolderStron.cs" />
-    <Compile Include="Encje\Profil.cs" />
-    <Compile Include="Encje\Rozszerzenia\FolderRozszerzenia.cs" />
+    <Compile Include="Encje\Profile.cs" />
+    <Compile Include="Encje\Rozszerzenia\ProfileRozszerzenia.cs" />
     <Compile Include="Encje\Rozszerzenia\StandardoweFormaty.cs" />
     <Compile Include="Encje\Rozszerzenia\WymiarRozszerzenia.cs" />
     <Compile Include="Encje\Rozszerzenia\StronaRozszerzenia.cs" />
