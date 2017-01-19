@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczStronyTematycznie", "PoliczStronyTematycznie\PoliczStronyTematycznie.csproj", "{16CAE0E8-9F53-41FD-AFAD-195359D5C300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4", "PoliczStronyA4\StronyA4.csproj", "{3318D150-1EC2-444C-8ACF-DA7D2C523C3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4Cmd", "StronyA4Cmd\StronyA4Cmd.csproj", "{3318D150-1EC2-444C-8ACF-DA7D2C523C3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczArkusze", "PoliczArkusze\PoliczArkusze.csproj", "{FAD52FAD-4E30-41A4-9B78-D82813F2FD88}"
 EndProject

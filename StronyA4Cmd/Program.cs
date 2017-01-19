@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
 using StronyA4.Properties;
 using StronyA4.Domena.Abstrakcje;
 using StronyA4.Domena.Repozytoria;
 using StronyA4.Domena.Repozytoria.Rozszerzenia;
 
-namespace StronyA4
+namespace StronyA4Cmd
 {
     /// <summary>
     /// StronyA4.exe folder:"" fileType:*.jpg lub *.pdf formats:A0,A1,A2,A3,A4

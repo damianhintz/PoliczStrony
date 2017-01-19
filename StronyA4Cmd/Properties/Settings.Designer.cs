@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StronyA4.Properties {
+namespace StronyA4Cmd.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

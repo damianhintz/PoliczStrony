@@ -7,8 +7,8 @@
     <ProjectGuid>{3318D150-1EC2-444C-8ACF-DA7D2C523C3C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StronyA4</RootNamespace>
-    <AssemblyName>StronyA4</AssemblyName>
+    <RootNamespace>StronyA4Cmd</RootNamespace>
+    <AssemblyName>StronyA4Cmd</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

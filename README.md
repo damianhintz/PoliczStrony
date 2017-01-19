@@ -27,6 +27,10 @@ StronyA4.exe c:\Strony *.jpg A0,A1,A2,A3,A4
 
 Do zrobienia
 
+* [ ] interfejs graficzny
+* [ ] zliczanie plików pdf
+* [ ] wykorzystanie uczenia maszynowego do klasyfikacji
+
 2016-12-22 v1.6
 
 * nowość: raport z listą stron
