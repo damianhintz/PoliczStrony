@@ -34,6 +34,10 @@
       <HintPath>..\packages\iTextSharp.5.5.7\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +54,9 @@
     <Compile Include="Abstrakcje\IRepozytoriumStron.cs" />
     <Compile Include="Abstrakcje\IStrona.cs" />
     <Compile Include="Abstrakcje\IWymiarowalny.cs" />
+    <Compile Include="Encje\FolderStron.cs" />
+    <Compile Include="Encje\Profil.cs" />
+    <Compile Include="Encje\Rozszerzenia\FolderRozszerzenia.cs" />
     <Compile Include="Encje\Rozszerzenia\StandardoweFormaty.cs" />
     <Compile Include="Encje\Rozszerzenia\WymiarRozszerzenia.cs" />
     <Compile Include="Encje\Rozszerzenia\StronaRozszerzenia.cs" />

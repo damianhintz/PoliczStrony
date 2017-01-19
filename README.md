@@ -1,4 +1,4 @@
-﻿StronyA4 v1.6-beta, 22 grudnia 2016
+﻿StronyA4 v1.7-beta, 19 stycznia 2017
 ---
 Policz strony A4 w plikach pdf lub jpg
 
@@ -30,6 +30,10 @@ Do zrobienia
 * [ ] interfejs graficzny
 * [ ] zliczanie plików pdf
 * [ ] wykorzystanie uczenia maszynowego do klasyfikacji
+
+2017-01-19 v1.7-beta
+
+* nowość: profile folderów
 
 2016-12-22 v1.6
 

@@ -65,9 +65,9 @@
     <None Include="PoliczStronyA4.tab" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PoliczStronyA4.Domena\StronyA4.Domena.csproj">
+    <ProjectReference Include="..\StronyA4Domena\StronyA4Domena.csproj">
       <Project>{d10016e1-c25c-4415-81ce-1a1030968a22}</Project>
-      <Name>StronyA4.Domena</Name>
+      <Name>StronyA4Domena</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

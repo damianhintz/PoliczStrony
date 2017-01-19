@@ -8,7 +8,7 @@ using Shouldly;
 namespace StronyA4Testy
 {
     [TestClass]
-    public class WymiarStronyTest
+    public class OdległośćTest
     {
         [TestMethod]
         public void Odległość_ShouldBeA4CloserToA1ThanToA0()

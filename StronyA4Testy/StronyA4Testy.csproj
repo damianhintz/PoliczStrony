@@ -66,14 +66,16 @@
     <Compile Include="StronaTest.cs" />
     <Compile Include="TestRozszerzenia.cs" />
     <Compile Include="PowierzchniowyKlasyfikatorTest.cs" />
-    <Compile Include="WymiarStronyTest.cs" />
+    <Compile Include="ProfileTest.cs" />
+    <Compile Include="OdległośćTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepozytoriumStronTest.cs" />
+    <Compile Include="FolderStronTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PoliczStronyA4.Domena\StronyA4.Domena.csproj">
+    <ProjectReference Include="..\StronyA4Domena\StronyA4Domena.csproj">
       <Project>{d10016e1-c25c-4415-81ce-1a1030968a22}</Project>
-      <Name>StronyA4.Domena</Name>
+      <Name>StronyA4Domena</Name>
     </ProjectReference>
     <ProjectReference Include="..\PoliczStronyTematycznie\PoliczStronyTematycznie.csproj">
       <Project>{16cae0e8-9f53-41fd-afad-195359d5c300}</Project>
@@ -85,6 +87,9 @@
     <None Include="Samples\KlasyfikatorStronyTest.tab" />
     <None Include="Samples\CzytnikStronPdfTest_14.pdf" />
     <None Include="Samples\CzytnikStronPdfTest_1.pdf" />
+    <None Include="Samples\Profile\default.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Samples\CzytnikStronPdfTest_0.pdf" />

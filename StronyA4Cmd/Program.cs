@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using StronyA4.Properties;
+using StronyA4Cmd.Properties;
 using StronyA4Domena.Abstrakcje;
 using StronyA4Domena.Repozytoria;
 using StronyA4Domena.Repozytoria.Rozszerzenia;

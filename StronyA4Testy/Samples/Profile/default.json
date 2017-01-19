@@ -1,0 +1,20 @@
+﻿{
+  "Nazwa": "Nazwa profilu",
+  "Opis": "Opis profilu",
+  "Foldery": [
+    {
+      "Folder": "c:/Users/Administrator/Desktop",
+      "Typ": "pdf",
+      "Metoda": "powierzchnia",
+      "Pliki": "0",
+      "Strony": "0"
+    },
+    {
+      "Folder": "c:/Users/Administrator/Desktop",
+      "Typ": "jpg",
+      "Metoda": "metryka",
+      "Pliki": "0",
+      "Strony": "0"
+    }
+  ]
+}
