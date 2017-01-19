@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StronyA4.Domena;
-using StronyA4.Domena.Encje;
-using StronyA4.Domena.Encje.Rozszerzenia;
+using StronyA4Domena;
+using StronyA4Domena.Encje;
+using StronyA4Domena.Encje.Rozszerzenia;
 using Shouldly;
 
 namespace StronyA4Testy

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using StronyA4.Domena.Abstrakcje;
-using StronyA4.Domena.Klasyfikacja;
+using StronyA4Domena.Abstrakcje;
+using StronyA4Domena.Klasyfikacja;
 
-namespace StronyA4.Domena.Repozytoria
+namespace StronyA4Domena.Repozytoria
 {
     /// <summary>
     /// Importer stron plików pdf do repozytorium.

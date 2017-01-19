@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace StronyA4.Domena.Encje.Rozszerzenia
+namespace StronyA4Domena.Encje.Rozszerzenia
 {
     public static class StandardoweFormaty
     {

@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StronyA4.Domena.Abstrakcje;
+using StronyA4Domena.Abstrakcje;
 
 namespace StronyA4.EntityFramework
 {

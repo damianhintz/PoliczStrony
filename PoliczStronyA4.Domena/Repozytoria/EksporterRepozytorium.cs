@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using StronyA4.Domena.Abstrakcje;
+using StronyA4Domena.Abstrakcje;
 
-namespace StronyA4.Domena.Repozytoria
+namespace StronyA4Domena.Repozytoria
 {
     public class EksporterRepozytorium : IEksporterRepozytorium
     {

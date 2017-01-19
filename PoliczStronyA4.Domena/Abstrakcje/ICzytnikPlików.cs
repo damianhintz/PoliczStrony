@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace StronyA4.Domena.Abstrakcje
+namespace StronyA4Domena.Abstrakcje
 {
     public interface ICzytnikPlików
     {

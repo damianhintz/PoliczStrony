@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Biblioteka klas domeny zliczania stron A4")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OPGK Olsztyn")]
-[assembly: AssemblyProduct("StronyA4.Domena")]
-[assembly: AssemblyCopyright("Copyright © Damian Hintz 2015-2016")]
+[assembly: AssemblyProduct("StronyA4Domena")]
+[assembly: AssemblyCopyright("Copyright © Damian Hintz 2015-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

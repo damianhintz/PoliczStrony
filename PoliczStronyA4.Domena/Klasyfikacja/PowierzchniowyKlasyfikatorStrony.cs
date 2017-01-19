@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StronyA4.Domena.Abstrakcje;
-using StronyA4.Domena.Encje;
-using StronyA4.Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Abstrakcje;
+using StronyA4Domena.Encje;
+using StronyA4Domena.Encje.Rozszerzenia;
 using System.Diagnostics;
 
-namespace StronyA4.Domena.Klasyfikacja
+namespace StronyA4Domena.Klasyfikacja
 {
     /// <summary>
     /// Klasyfikator formatu strony na podstawie stosunku jej powierzchni do powierzchni formatu A4.

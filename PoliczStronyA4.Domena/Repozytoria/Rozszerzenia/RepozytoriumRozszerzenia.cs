@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StronyA4.Domena.Encje.Rozszerzenia;
-using StronyA4.Domena.Abstrakcje;
-using StronyA4.Domena.Klasyfikacja;
+using StronyA4Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Abstrakcje;
+using StronyA4Domena.Klasyfikacja;
 
-namespace StronyA4.Domena.Repozytoria.Rozszerzenia
+namespace StronyA4Domena.Repozytoria.Rozszerzenia
 {
     /// <summary>
     /// Rozszerzenia repozytorium stron.

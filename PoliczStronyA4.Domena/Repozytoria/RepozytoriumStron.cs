@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StronyA4.Domena.Abstrakcje;
+using StronyA4Domena.Abstrakcje;
 using System.IO;
 
-namespace StronyA4.Domena.Repozytoria
+namespace StronyA4Domena.Repozytoria
 {
     /// <summary>
     /// Repozytorium stron.

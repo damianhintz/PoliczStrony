@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StronyA4.Domena.Klasyfikacja;
+using StronyA4Domena.Klasyfikacja;
 using System.Linq;
 using Shouldly;
-using StronyA4.Domena.Encje.Rozszerzenia;
-using StronyA4.Domena.Encje;
+using StronyA4Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Encje;
 
 namespace StronyA4Testy
 {

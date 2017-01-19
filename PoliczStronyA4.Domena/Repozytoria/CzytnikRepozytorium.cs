@@ -1,13 +1,13 @@
-﻿using StronyA4.Domena.Encje;
-using StronyA4.Domena.Encje.Rozszerzenia;
-using StronyA4.Domena.Abstrakcje;
+﻿using StronyA4Domena.Encje;
+using StronyA4Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Abstrakcje;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace StronyA4.Domena.Repozytoria
+namespace StronyA4Domena.Repozytoria
 {
     public class CzytnikRepozytorium
     {

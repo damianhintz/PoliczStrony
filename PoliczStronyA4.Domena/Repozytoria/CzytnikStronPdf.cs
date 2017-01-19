@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using StronyA4.Domena.Encje.Rozszerzenia;
-using StronyA4.Domena.Encje;
+using StronyA4Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Encje;
 
-namespace StronyA4.Domena.Repozytoria
+namespace StronyA4Domena.Repozytoria
 {
     public class CzytnikStronPdf
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using StronyA4.Properties;
-using StronyA4.Domena.Abstrakcje;
-using StronyA4.Domena.Repozytoria;
-using StronyA4.Domena.Repozytoria.Rozszerzenia;
+using StronyA4Domena.Abstrakcje;
+using StronyA4Domena.Repozytoria;
+using StronyA4Domena.Repozytoria.Rozszerzenia;
 
 namespace StronyA4Cmd
 {

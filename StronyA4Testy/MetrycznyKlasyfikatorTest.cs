@@ -4,12 +4,12 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StronyA4.Domena;
-using StronyA4.Domena.Encje;
-using StronyA4.Domena.Encje.Rozszerzenia;
-using StronyA4.Domena.Klasyfikacja;
-using StronyA4.Domena.Repozytoria;
-using StronyA4.Domena.Repozytoria.Rozszerzenia;
+using StronyA4Domena;
+using StronyA4Domena.Encje;
+using StronyA4Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Klasyfikacja;
+using StronyA4Domena.Repozytoria;
+using StronyA4Domena.Repozytoria.Rozszerzenia;
 using Shouldly;
 
 namespace StronyA4Testy

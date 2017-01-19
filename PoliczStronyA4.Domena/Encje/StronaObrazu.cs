@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using StronyA4.Domena.Abstrakcje;
+using StronyA4Domena.Abstrakcje;
 
-namespace StronyA4.Domena.Encje
+namespace StronyA4Domena.Encje
 {
     /// <summary>
     /// Reprezentuje stronę obrazu w pliku.

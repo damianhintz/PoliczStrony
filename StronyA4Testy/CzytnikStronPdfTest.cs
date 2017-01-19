@@ -2,8 +2,8 @@
 using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StronyA4.Domena;
-using StronyA4.Domena.Repozytoria;
+using StronyA4Domena;
+using StronyA4Domena.Repozytoria;
 using iTextSharp.text.exceptions;
 using Shouldly;
 

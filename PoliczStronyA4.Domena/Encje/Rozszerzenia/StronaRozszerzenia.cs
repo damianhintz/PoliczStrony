@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Media.Imaging;
-using StronyA4.Domena.Abstrakcje;
-using StronyA4.Domena.Encje.Rozszerzenia;
+using StronyA4Domena.Abstrakcje;
+using StronyA4Domena.Encje.Rozszerzenia;
 
-namespace StronyA4.Domena.Encje.Rozszerzenia
+namespace StronyA4Domena.Encje.Rozszerzenia
 {
     /// <summary>
     /// Rozszerzenia strony.
