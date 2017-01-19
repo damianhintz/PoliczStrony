@@ -107,5 +107,21 @@ namespace StronyA4
             return folder.Pliki;
         }
 
+        private void usuńFolderMenuItem_Click(object sender, EventArgs e)
+        {
+            var items = Zaznaczone;
+            foreach (var item in items)
+            {
+                var folder = item.FolderStron;
+                Foldery.Remove(folder);
+            }
+            folderView.VirtualListSize = Foldery.Count;
+            statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
+            Settings.Default.Profile.ZapiszProfil(_profile);
+            MessageBox.Show(owner: this,
+                text: "Usunięte foldery: " + items.Count() +
+                "\nKoniec.",
+                caption: (sender as ToolStripItem).Text);
+        }
     }
 }

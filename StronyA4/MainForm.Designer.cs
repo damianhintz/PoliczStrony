@@ -53,7 +53,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.analizujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmieńMetodęToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńFolderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel = new System.Windows.Forms.Panel();
             this.folderView = new System.Windows.Forms.ListView();
             this.folderHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,6 +62,7 @@
             this.plikiHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stronyHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menu.SuspendLayout();
             this.status.SuspendLayout();
             this.folderMenu.SuspendLayout();
@@ -202,10 +203,11 @@
             this.toolStripSeparator4,
             this.analizujToolStripMenuItem,
             this.zmieńMetodęToolStripMenuItem,
-            this.usuńToolStripMenuItem});
+            this.toolStripSeparator5,
+            this.usuńFolderMenuItem});
             this.folderMenu.Name = "folderMenu";
             this.folderMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.folderMenu.Size = new System.Drawing.Size(153, 148);
+            this.folderMenu.Size = new System.Drawing.Size(153, 176);
             // 
             // odświeżMenuItem
             // 
@@ -225,6 +227,7 @@
             this.pokażFolderToolStripMenuItem.Name = "pokażFolderToolStripMenuItem";
             this.pokażFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pokażFolderToolStripMenuItem.Text = "Pokaż folder";
+            this.pokażFolderToolStripMenuItem.ToolTipText = "Otwórz folder w ekploratorze plików";
             // 
             // pokażPlikiToolStripMenuItem
             // 
@@ -249,11 +252,13 @@
             this.zmieńMetodęToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.zmieńMetodęToolStripMenuItem.Text = "Zmień metodę";
             // 
-            // usuńToolStripMenuItem
+            // usuńFolderMenuItem
             // 
-            this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.usuńToolStripMenuItem.Text = "Usuń";
+            this.usuńFolderMenuItem.Name = "usuńFolderMenuItem";
+            this.usuńFolderMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuńFolderMenuItem.Text = "Usuń";
+            this.usuńFolderMenuItem.ToolTipText = "Usuń folder z profilu";
+            this.usuńFolderMenuItem.Click += new System.EventHandler(this.usuńFolderMenuItem_Click);
             // 
             // panel
             // 
@@ -315,6 +320,11 @@
             this.dataHeader.Text = "Data zliczania";
             this.dataHeader.Width = 150;
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,7 +367,7 @@
         private System.Windows.Forms.ToolStripMenuItem odświeżMenuItem;
         private System.Windows.Forms.ToolStripMenuItem analizujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmieńMetodęToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuńFolderMenuItem;
         private System.Windows.Forms.ColumnHeader typHeader;
         private System.Windows.Forms.ColumnHeader metodaHeader;
         private System.Windows.Forms.ColumnHeader plikiHeader;
@@ -374,6 +384,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem odwróćZaznaczenieToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
 
