@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4Cmd", "StronyA4Cmd\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliczArkusze", "PoliczArkusze\PoliczArkusze.csproj", "{FAD52FAD-4E30-41A4-9B78-D82813F2FD88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4Testy", "PoliczStrony.Testy\StronyA4Testy.csproj", "{493B303F-2872-4860-A3E7-7563D11A69CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4Testy", "StronyA4Testy\StronyA4Testy.csproj", "{493B303F-2872-4860-A3E7-7563D11A69CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronyA4.Domena", "PoliczStronyA4.Domena\StronyA4.Domena.csproj", "{D10016E1-C25C-4415-81CE-1A1030968A22}"
 EndProject
