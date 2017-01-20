@@ -47,7 +47,7 @@ namespace StronyA4
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            statusLabel.Text = "Wczytywanie profilu " + Settings.Default.Profile;
+            Status("Wczytywanie profilu " + Settings.Default.Profile);
             _profile = Settings.Default.Profile.WczytajProfil();
             folderView.VirtualListSize = Foldery.Count;
         }
@@ -77,7 +77,7 @@ namespace StronyA4
 
         void AutozapisProfilu()
         {
-            statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
+            Status("Autozapis profilu " + Settings.Default.Profile);
             Settings.Default.Profile.ZapiszProfil(_profile);
         }
 
@@ -85,39 +85,74 @@ namespace StronyA4
         {
             var items = Zaznaczone;
             var pliki = 0;
+            var strony = 0;
+            var stronyA4 = 0;
+            var errors = new List<string>();
             foreach (var item in items)
             {
-                pliki += PoliczStronyA4(item.FolderStron);
+                var folderErrors = PoliczStronyA4(item.FolderStron);
+                errors.AddRange(folderErrors);
+                pliki += item.FolderStron.Pliki;
+                strony += item.FolderStron.Strony;
+                stronyA4 += item.FolderStron.StronyA4;
                 item.Odśwież();
             }
             AutozapisProfilu();
+            var icon = MessageBoxIcon.Information;
+            if (errors.Count > 0) icon = MessageBoxIcon.Warning;
             MessageBox.Show(owner: this,
                 text: "Wczytane foldery: " + items.Count() +
-                "\nWczytane pliki: " + pliki +
+                "\nWczytane pliki: " + pliki + " (" + errors.Count + " błędów)" +
+                "\nWczytane strony: " + strony +
+                "\nWczytane strony A4: " + stronyA4 +
                 "\nKoniec.",
-                caption: (sender as ToolStripItem).Text);
+                caption: (sender as ToolStripItem).Text,
+                buttons: MessageBoxButtons.OK,
+                icon: icon);
+            PokażPlik(errors);
         }
 
-        int PoliczStronyA4(FolderStron folder)
+        void PokażPlik(IEnumerable<string> records)
         {
-            statusLabel.Text = "Wczytywanie folderu " + folder.Folder;
+            if (!records.Any()) return;
+            var fileName = Path.GetTempFileName();
+            fileName = Path.ChangeExtension(fileName, "txt");
+            File.WriteAllLines(fileName, records);
+            Process.Start(fileName);
+        }
+
+        IEnumerable<string> PoliczStronyA4(FolderStron folder)
+        {
+            Status("Wczytywanie folderu " + folder.Folder);
             IRepozytoriumStron strony = new RepozytoriumStron();
             ICzytnikPlików czytnik;
             var typ = folder.Typ;
             if (typ.Equals("pdf")) czytnik = new CzytnikPlikówPdf(strony);
             else if (typ.Equals("jpg")) czytnik = new CzytnikPlikówJpg(strony);
             else throw new NotImplementedException("Brak implementacji importera plików typu: " + typ);
-            czytnik.Wczytaj(folder.Folder);
+            var pliki = czytnik.Wczytaj(folder.Folder);
+            var errors = new List<string>();
+            foreach (var plik in pliki)
+            {
+                Status("Wczytywanie pliku " + plik);
+                if (plik.Contains("ERROR:")) errors.Add(plik);
+            }
             folder.Pliki = strony.Pliki.Count();
             folder.Strony = strony.Strony.Count();
-            statusLabel.Text = "Klasyfikowanie stron w folderze " + folder.Folder + ", za pomocą metody " + folder.Metoda;
+            Status("Klasyfikowanie stron w folderze " + folder.Folder + ", za pomocą metody " + folder.Metoda);
             var formats = Settings.Default.Formaty.Split(',');
             var stronyA4 = 0;
             if (folder.Metoda.Equals("stosunekPowierzchni")) stronyA4 = strony.SumaStronA4Powierzchniowo(formats);
             else stronyA4 = strony.SumaStronA4Metrycznie(formats);
             folder.StronyA4 = stronyA4;
             folder.Data = DateTime.Now;
-            return folder.Pliki;
+            return errors;
+        }
+
+        void Status(string msg)
+        {
+            statusLabel.Text = msg;
+            Application.DoEvents();
         }
 
         private void usuńFolderMenuItem_Click(object sender, EventArgs e)
@@ -153,7 +188,7 @@ namespace StronyA4
 
         private void zaznaczWszystkoMenuItem_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < folderView.VirtualListSize; i++)
+            for (int i = 0; i < folderView.VirtualListSize; i++)
             {
                 folderView.Items[i].Selected = true;
             }
@@ -170,7 +205,7 @@ namespace StronyA4
         private void zmieńTypMenuItem_Click(object sender, EventArgs e)
         {
             var items = Zaznaczone;
-            foreach(var item in items)
+            foreach (var item in items)
             {
                 item.FolderStron.Typ = (sender as ToolStripItem).Tag as string;
                 item.Odśwież();
@@ -187,6 +222,33 @@ namespace StronyA4
                 item.Odśwież();
             }
             AutozapisProfilu();
+        }
+
+        private void pokażZaznaczenieMenuItem_Click(object sender, EventArgs e)
+        {
+            var items = Zaznaczone;
+            var records = new List<string>();
+            records.Add("Folder\tTyp\tMetoda\tPliki\tStrony\tStrony A4\tData");
+            foreach (var item in items)
+            {
+                var folder = item.FolderStron;
+                var record = string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}",
+                    folder.Folder, folder.Typ, folder.Metoda,
+                    folder.Pliki, folder.Strony, folder.StronyA4,
+                    folder.Data);
+                records.Add(record);
+            }
+            PokażPlik(records);
+        }
+
+        private void zaznaczNoweMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < folderView.VirtualListSize; i++)
+            {
+                var item = folderView.Items[i] as FolderViewItem;
+                var folder = item.FolderStron;
+                item.Selected = !folder.Data.HasValue;
+            }
         }
     }
 }

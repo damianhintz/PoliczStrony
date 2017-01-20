@@ -8,6 +8,6 @@ namespace StronyA4Domena.Abstrakcje
     public interface ICzytnikPlików
     {
         IEnumerable<string> Pliki { get; }
-        void Wczytaj(string folder);
+        IEnumerable<string> Wczytaj(string folder);
     }
 }

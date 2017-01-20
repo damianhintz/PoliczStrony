@@ -27,7 +27,6 @@ StronyA4.exe c:\Strony *.jpg A0,A1,A2,A3,A4
 
 Do zrobienia
 
-* [ ] postęp wczytywania folderu
 * [ ] zmiana domyślnego profilu
 * [ ] pytanie czy zliczać pliki, bo może zająć dużo czasu
 * [ ] pytanie czy usuwać folder, bo zostaną utracone dane
@@ -44,6 +43,10 @@ Do zrobienia
 * nowość: klasyfikacja stron metodą powierzchniową lub metryczną
 * nowość: wybór typu plików
 * nowość: wybór metody klasyfikacji
+* nowość: postęp wczytywania folderu
+* nowość: raport błędnych plików
+* nowość: pokaż zawartość zaznaczenia
+* nowość: zaznaczanie nowych folderów, których jeszcze nie zliczano
 
 2016-12-22 v1.6
 

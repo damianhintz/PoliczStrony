@@ -20,13 +20,15 @@ namespace StronyA4Domena.Repozytoria
             _strony = strony;
         }
 
-        public void Wczytaj(string folder)
+        public IEnumerable<string> Wczytaj(string folder)
         {
             _pliki = Directory.GetFiles(folder, "*.pdf", SearchOption.AllDirectories);
             foreach (var plik in _pliki)
             {
+                var error = plik;
                 try { OdczytajStronyPlikuPdf(plik); }
-                catch { }
+                catch (Exception ex) { error = plik + "\tERROR: " + ex.Message; }
+                yield return error;
             }
         }
 

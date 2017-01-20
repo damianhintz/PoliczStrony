@@ -68,6 +68,8 @@
             this.stronyHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stronyA4Header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.pokażZaznaczenieMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.status.SuspendLayout();
             this.folderMenu.SuspendLayout();
@@ -86,7 +88,7 @@
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menu.Size = new System.Drawing.Size(1069, 26);
+            this.menu.Size = new System.Drawing.Size(1069, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -97,7 +99,7 @@
             this.toolStripSeparator1,
             this.zakończMenuItem});
             this.plikMenuItem.Name = "plikMenuItem";
-            this.plikMenuItem.Size = new System.Drawing.Size(39, 22);
+            this.plikMenuItem.Size = new System.Drawing.Size(39, 24);
             this.plikMenuItem.Text = "Plik";
             // 
             // dodajFolderMenuItem
@@ -129,9 +131,11 @@
             this.zaznaczNoweMenuItem,
             this.zaznaczNieaktualneMenuItem,
             this.toolStripSeparator3,
-            this.odwróćZaznaczenieMenuItem});
+            this.odwróćZaznaczenieMenuItem,
+            this.toolStripSeparator6,
+            this.pokażZaznaczenieMenuItem});
             this.widokMenuItem.Name = "widokMenuItem";
-            this.widokMenuItem.Size = new System.Drawing.Size(59, 22);
+            this.widokMenuItem.Size = new System.Drawing.Size(59, 24);
             this.widokMenuItem.Text = "Widok";
             // 
             // zaznaczWszystkoMenuItem
@@ -148,6 +152,7 @@
             this.zaznaczNoweMenuItem.Size = new System.Drawing.Size(263, 26);
             this.zaznaczNoweMenuItem.Text = "Zaznacz nowe";
             this.zaznaczNoweMenuItem.ToolTipText = "Zaznacz foldery, dla których nie zliczano jeszcze stron";
+            this.zaznaczNoweMenuItem.Click += new System.EventHandler(this.zaznaczNoweMenuItem_Click);
             // 
             // zaznaczNieaktualneMenuItem
             // 
@@ -174,7 +179,7 @@
             this.pomocMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.czytajToMenuItem});
             this.pomocMenuItem.Name = "pomocMenuItem";
-            this.pomocMenuItem.Size = new System.Drawing.Size(64, 22);
+            this.pomocMenuItem.Size = new System.Drawing.Size(64, 24);
             this.pomocMenuItem.Text = "Pomoc";
             // 
             // czytajToMenuItem
@@ -328,10 +333,10 @@
             // 
             this.panel.Controls.Add(this.folderView);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 26);
+            this.panel.Location = new System.Drawing.Point(0, 28);
             this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1069, 490);
+            this.panel.Size = new System.Drawing.Size(1069, 488);
             this.panel.TabIndex = 3;
             // 
             // folderView
@@ -351,7 +356,7 @@
             this.folderView.Location = new System.Drawing.Point(0, 0);
             this.folderView.Margin = new System.Windows.Forms.Padding(4);
             this.folderView.Name = "folderView";
-            this.folderView.Size = new System.Drawing.Size(1069, 490);
+            this.folderView.Size = new System.Drawing.Size(1069, 488);
             this.folderView.TabIndex = 0;
             this.folderView.UseCompatibleStateImageBehavior = false;
             this.folderView.View = System.Windows.Forms.View.Details;
@@ -392,6 +397,19 @@
             this.dataHeader.Text = "Data zliczania";
             this.dataHeader.Width = 150;
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(260, 6);
+            // 
+            // pokażZaznaczenieMenuItem
+            // 
+            this.pokażZaznaczenieMenuItem.Name = "pokażZaznaczenieMenuItem";
+            this.pokażZaznaczenieMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pokażZaznaczenieMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.pokażZaznaczenieMenuItem.Text = "Pokaż zaznaczenie";
+            this.pokażZaznaczenieMenuItem.Click += new System.EventHandler(this.pokażZaznaczenieMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,7 +422,7 @@
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "StronyA4 v1.7-beta - Zliczaj strony A4 (19 stycznia 2017)";
+            this.Text = "StronyA4 v1.7-beta - Zliczaj strony A4 (20 stycznia 2017)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menu.ResumeLayout(false);
@@ -458,6 +476,8 @@
         private System.Windows.Forms.ToolStripMenuItem plikiJpgMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stosunekPowierzchniMenuItem;
         private System.Windows.Forms.ToolStripMenuItem metrykaEuklidesowaMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem pokażZaznaczenieMenuItem;
     }
 }
 
