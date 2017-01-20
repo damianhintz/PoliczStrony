@@ -1,4 +1,4 @@
-﻿StronyA4 v1.7-beta, 20 stycznia 2017
+﻿StronyA4 v1.7.1-beta, 20 stycznia 2017
 ---
 Policz strony A4 w plikach pdf lub jpg
 
@@ -32,6 +32,10 @@ Do zrobienia
 * [ ] pytanie czy usuwać folder, bo zostaną utracone dane
 * [ ] wykorzystanie uczenia maszynowego do klasyfikacji
 * [ ] pamięć podręczna wczytanych plików w folderze StronyA4.tab
+
+2017-01-20 v1.7.1-beta
+
+* aktualizacja: platforma docelowa .NET Framework 4 Client Profile
 
 2017-01-20 v1.7-beta
 

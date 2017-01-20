@@ -415,7 +415,7 @@
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "StronyA4 v1.7-beta - Zliczaj strony A4 (20 stycznia 2017)";
+            this.Text = "StronyA4 v1.7.1-beta - Zliczaj strony A4 (20 stycznia 2017)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menu.ResumeLayout(false);
