@@ -152,7 +152,10 @@ namespace StronyA4
 
         private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            for(int i = 0; i < folderView.VirtualListSize; i++)
+            {
+                folderView.Items[i].Selected = true;
+            }
         }
     }
 }
