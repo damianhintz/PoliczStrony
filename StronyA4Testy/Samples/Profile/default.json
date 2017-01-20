@@ -7,14 +7,16 @@
       "Typ": "pdf",
       "Metoda": "powierzchnia",
       "Pliki": "0",
-      "Strony": "0"
+      "Strony": "0",
+      "StronyA4": "0"
     },
     {
       "Folder": "c:/Users/Administrator/Desktop",
       "Typ": "jpg",
       "Metoda": "metryka",
       "Pliki": "0",
-      "Strony": "0"
+      "Strony": "0",
+      "StronyA4": "0"
     }
   ]
 }

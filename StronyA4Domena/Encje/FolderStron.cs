@@ -15,6 +15,7 @@ namespace StronyA4Domena.Encje
         public string Metoda { get; set; } = "stosunekPowierzchni"; //metrykaEuklidesowa,klasyfikator
         public int Pliki { get; set; }
         public int Strony { get; set; }
+        public int StronyA4 { get; set; }
         public DateTime? Data { get; set; }
     }
 }

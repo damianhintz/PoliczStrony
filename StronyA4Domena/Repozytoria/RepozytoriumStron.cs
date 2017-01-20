@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using StronyA4Domena.Abstrakcje;
-using System.IO;
 
 namespace StronyA4Domena.Repozytoria
 {
@@ -22,7 +20,7 @@ namespace StronyA4Domena.Repozytoria
         /// </summary>
         public IQueryable<IStrona> Strony => _strony.AsQueryable();
         List<IStrona> _strony = new List<IStrona>();
-        
+
         /// <summary>
         /// Dodaj stronę do repozytorium.
         /// </summary>
@@ -31,6 +29,6 @@ namespace StronyA4Domena.Repozytoria
         {
             _strony.Add(strona);
         }
-        
+
     }
 }

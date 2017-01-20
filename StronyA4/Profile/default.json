@@ -7,14 +7,24 @@
       "Typ": "pdf",
       "Metoda": "stosunekPowierzchni",
       "Pliki": "0",
-      "Strony": "0"
+      "Strony": "0",
+      "StronyA4": "0"
     },
     {
       "Folder": "c:/Users/Administrator/Desktop",
       "Typ": "jpg",
       "Metoda": "metrykaEuklidesowa",
       "Pliki": "0",
-      "Strony": "0"
+      "Strony": "0",
+      "StronyA4": "0"
+    },
+    {
+      "Folder": "c:/Users/Administrator/Desktop",
+      "Typ": "jpg",
+      "Metoda": "stosunekPowierzchni",
+      "Pliki": "0",
+      "Strony": "0",
+      "StronyA4": "0"
     }
   ]
 }

@@ -1,4 +1,4 @@
-﻿StronyA4 v1.7-beta, 19 stycznia 2017
+﻿StronyA4 v1.7-beta, 20 stycznia 2017
 ---
 Policz strony A4 w plikach pdf lub jpg
 
@@ -32,13 +32,16 @@ Do zrobienia
 * [ ] wykorzystanie uczenia maszynowego do klasyfikacji
 * [ ] pamięć podręczna wczytanych plików w folderze StronyA4.tab
 
-2017-01-19 v1.7-beta
+2017-01-20 v1.7-beta
 
 * nowość: wczytanie domyślnego profilu Profile\Default.json
 * nowość: autozapis profilu po dodaniu folderu
 * nowość: autozapis profilu po wczytaniu folderu
 * nowość: usuwanie folderu z profilu z autozapisem
 * nowość: otwieranie folderu w eksploratorze plików
+* nowość: klasyfikacja stron metodą powierzchniową lub metryczną
+* nowość: wybór typu plików
+* nowość: wybór metody klasyfikacji
 
 2016-12-22 v1.6
 

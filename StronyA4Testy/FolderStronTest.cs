@@ -17,6 +17,7 @@ namespace StronyA4Testy
             folder.Metoda.ShouldBe("stosunekPowierzchni"); //metrykaEuklidesowa,klasyfikacja
             folder.Pliki.ShouldBe(0);
             folder.Strony.ShouldBe(0);
+            folder.StronyA4.ShouldBe(0);
             folder.Data.ShouldBeNull();
         }
     }

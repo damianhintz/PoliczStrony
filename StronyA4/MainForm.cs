@@ -11,6 +11,7 @@ using StronyA4Domena.Abstrakcje;
 using StronyA4Domena.Repozytoria;
 using System.Diagnostics;
 using System.IO;
+using StronyA4Domena.Repozytoria.Rozszerzenia;
 
 namespace StronyA4
 {
@@ -48,7 +49,6 @@ namespace StronyA4
         {
             statusLabel.Text = "Wczytywanie profilu " + Settings.Default.Profile;
             _profile = Settings.Default.Profile.WczytajProfil();
-            //Foldery.AddRange(_profile.Foldery);
             folderView.VirtualListSize = Foldery.Count;
         }
 
@@ -96,6 +96,7 @@ namespace StronyA4
 
         int PoliczStronyA4(FolderStron folder)
         {
+            statusLabel.Text = "Wczytywanie folderu " + folder.Folder;
             IRepozytoriumStron strony = new RepozytoriumStron();
             ICzytnikPlików czytnik;
             var typ = folder.Typ;
@@ -105,7 +106,15 @@ namespace StronyA4
             czytnik.Wczytaj(folder.Folder);
             folder.Pliki = strony.Pliki.Count();
             folder.Strony = strony.Strony.Count();
+            statusLabel.Text = "Klasyfikowanie stron w folderze " + folder.Folder + ", za pomocą metody " + folder.Metoda;
+            var formats = Settings.Default.Formaty.Split(',');
+            var stronyA4 = 0;
+            if (folder.Metoda.Equals("stosunekPowierzchni")) stronyA4 = strony.SumaStronA4Powierzchniowo(formats);
+            else stronyA4 = strony.SumaStronA4Metrycznie(formats);
+            folder.StronyA4 = stronyA4;
             folder.Data = DateTime.Now;
+            //var formaty = strony.ZestawienieStronA4Metrycznie(formats);
+            //PokażZestawienieFormatów(formaty);
             return folder.Pliki;
         }
 
@@ -139,6 +148,11 @@ namespace StronyA4
             var fileName = (sender as ToolStripItem).Tag as string;
             if (!File.Exists(fileName)) return;
             Process.Start(fileName);
+        }
+
+        private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

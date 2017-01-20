@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using StronyA4Domena.Abstrakcje;
-using StronyA4Domena.Klasyfikacja;
 
 namespace StronyA4Domena.Repozytoria
 {
@@ -16,7 +14,7 @@ namespace StronyA4Domena.Repozytoria
         IRepozytoriumStron _strony;
         public IEnumerable<string> Pliki => _pliki;
         string[] _pliki;
-        
+
         public CzytnikPlikówPdf(IRepozytoriumStron strony)
         {
             _strony = strony;

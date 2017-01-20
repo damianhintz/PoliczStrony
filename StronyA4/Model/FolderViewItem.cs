@@ -14,6 +14,7 @@ namespace StronyA4.Model
         public string Metoda => _folder.Metoda;
         public string Pliki => _folder.Pliki.ToString();
         public string Strony => _folder.Strony.ToString();
+        public string StronyA4 => _folder.StronyA4.ToString();
         public string Data => _folder.Data.HasValue ? _folder.Data.ToString() : "Brak";
         public FolderStron FolderStron => _folder;
         FolderStron _folder;
@@ -33,6 +34,7 @@ namespace StronyA4.Model
             SubItems.Add(Metoda);
             SubItems.Add(Pliki);
             SubItems.Add(Strony);
+            SubItems.Add(StronyA4);
             SubItems.Add(Data);
         }
     }

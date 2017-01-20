@@ -31,5 +31,14 @@ namespace StronyA4.Properties {
                 return ((string)(this["Profile"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2A0,A0,A1,A2,A3,A4,A5")]
+        public string Formaty {
+            get {
+                return ((string)(this["Formaty"]));
+            }
+        }
     }
 }
