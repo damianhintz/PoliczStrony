@@ -72,6 +72,11 @@ namespace StronyA4
             var folder = new FolderStron { Folder = browser.SelectedPath };
             Foldery.Add(folder);
             folderView.VirtualListSize = Foldery.Count;
+            AutozapisProfilu();
+        }
+
+        void AutozapisProfilu()
+        {
             statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
             Settings.Default.Profile.ZapiszProfil(_profile);
         }
@@ -85,8 +90,7 @@ namespace StronyA4
                 pliki += PoliczStronyA4(item.FolderStron);
                 item.Odśwież();
             }
-            statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
-            Settings.Default.Profile.ZapiszProfil(_profile);
+            AutozapisProfilu();
             MessageBox.Show(owner: this,
                 text: "Wczytane foldery: " + items.Count() +
                 "\nWczytane pliki: " + pliki +
@@ -113,8 +117,6 @@ namespace StronyA4
             else stronyA4 = strony.SumaStronA4Metrycznie(formats);
             folder.StronyA4 = stronyA4;
             folder.Data = DateTime.Now;
-            //var formaty = strony.ZestawienieStronA4Metrycznie(formats);
-            //PokażZestawienieFormatów(formaty);
             return folder.Pliki;
         }
 
@@ -127,15 +129,14 @@ namespace StronyA4
                 Foldery.Remove(folder);
             }
             folderView.VirtualListSize = Foldery.Count;
-            statusLabel.Text = "Autozapis profilu " + Settings.Default.Profile;
-            Settings.Default.Profile.ZapiszProfil(_profile);
+            AutozapisProfilu();
             MessageBox.Show(owner: this,
                 text: "Usunięte foldery: " + items.Count() +
                 "\nKoniec.",
                 caption: (sender as ToolStripItem).Text);
         }
 
-        private void pokażFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pokażFolderMenuItem_Click(object sender, EventArgs e)
         {
             var items = Zaznaczone;
             if (items.Count() != 1) return;
@@ -150,7 +151,7 @@ namespace StronyA4
             Process.Start(fileName);
         }
 
-        private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void zaznaczWszystkoMenuItem_Click(object sender, EventArgs e)
         {
             for(int i = 0; i < folderView.VirtualListSize; i++)
             {
@@ -158,12 +159,34 @@ namespace StronyA4
             }
         }
 
-        private void odwróćZaznaczenieToolStripMenuItem_Click(object sender, EventArgs e)
+        private void odwróćZaznaczenieMenuItem_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < folderView.VirtualListSize; i++)
             {
                 folderView.Items[i].Selected = !folderView.Items[i].Selected;
             }
+        }
+
+        private void zmieńTypMenuItem_Click(object sender, EventArgs e)
+        {
+            var items = Zaznaczone;
+            foreach(var item in items)
+            {
+                item.FolderStron.Typ = (sender as ToolStripItem).Tag as string;
+                item.Odśwież();
+            }
+            AutozapisProfilu();
+        }
+
+        private void zmieńMetodęMenuItem_Click(object sender, EventArgs e)
+        {
+            var items = Zaznaczone;
+            foreach (var item in items)
+            {
+                item.FolderStron.Metoda = (sender as ToolStripItem).Tag as string;
+                item.Odśwież();
+            }
+            AutozapisProfilu();
         }
     }
 }

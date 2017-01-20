@@ -27,6 +27,8 @@ StronyA4.exe c:\Strony *.jpg A0,A1,A2,A3,A4
 
 Do zrobienia
 
+* [ ] postęp wczytywania folderu
+* [ ] zmiana domyślnego profilu
 * [ ] pytanie czy zliczać pliki, bo może zająć dużo czasu
 * [ ] pytanie czy usuwać folder, bo zostaną utracone dane
 * [ ] wykorzystanie uczenia maszynowego do klasyfikacji
