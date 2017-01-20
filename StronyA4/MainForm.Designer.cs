@@ -134,34 +134,36 @@
             // 
             this.zaznaczWszystkoToolStripMenuItem.Name = "zaznaczWszystkoToolStripMenuItem";
             this.zaznaczWszystkoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.zaznaczWszystkoToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.zaznaczWszystkoToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
             this.zaznaczWszystkoToolStripMenuItem.Text = "Zaznacz wszystko";
             this.zaznaczWszystkoToolStripMenuItem.Click += new System.EventHandler(this.zaznaczWszystkoToolStripMenuItem_Click);
             // 
             // zaznaczNoweToolStripMenuItem
             // 
             this.zaznaczNoweToolStripMenuItem.Name = "zaznaczNoweToolStripMenuItem";
-            this.zaznaczNoweToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.zaznaczNoweToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
             this.zaznaczNoweToolStripMenuItem.Text = "Zaznacz nowe";
             this.zaznaczNoweToolStripMenuItem.ToolTipText = "Zaznacz foldery, dla których nie zliczano jeszcze stron";
             // 
             // zaznaczNieaktualneToolStripMenuItem
             // 
             this.zaznaczNieaktualneToolStripMenuItem.Name = "zaznaczNieaktualneToolStripMenuItem";
-            this.zaznaczNieaktualneToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.zaznaczNieaktualneToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
             this.zaznaczNieaktualneToolStripMenuItem.Text = "Zaznacz nieaktualne";
             this.zaznaczNieaktualneToolStripMenuItem.ToolTipText = "Zaznacz fodlery, dla których zliczano strony, ale dawno temu";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(245, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(260, 6);
             // 
             // odwróćZaznaczenieToolStripMenuItem
             // 
             this.odwróćZaznaczenieToolStripMenuItem.Name = "odwróćZaznaczenieToolStripMenuItem";
-            this.odwróćZaznaczenieToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.odwróćZaznaczenieToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.odwróćZaznaczenieToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
             this.odwróćZaznaczenieToolStripMenuItem.Text = "Odwróć zaznaczenie";
+            this.odwróćZaznaczenieToolStripMenuItem.Click += new System.EventHandler(this.odwróćZaznaczenieToolStripMenuItem_Click);
             // 
             // pomocMenuItem
             // 

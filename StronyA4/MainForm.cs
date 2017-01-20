@@ -157,5 +157,13 @@ namespace StronyA4
                 folderView.Items[i].Selected = true;
             }
         }
+
+        private void odwróćZaznaczenieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < folderView.VirtualListSize; i++)
+            {
+                folderView.Items[i].Selected = !folderView.Items[i].Selected;
+            }
+        }
     }
 }
