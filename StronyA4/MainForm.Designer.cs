@@ -41,6 +41,8 @@
             this.zaznaczNieaktualneMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.odwróćZaznaczenieMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.pokażZaznaczenieMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.czytajToMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status = new System.Windows.Forms.StatusStrip();
@@ -49,7 +51,6 @@
             this.odświeżMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.pokażFolderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pokażPlikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.zmieńTypMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plikiPdfMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,8 +69,6 @@
             this.stronyHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stronyA4Header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.pokażZaznaczenieMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.status.SuspendLayout();
             this.folderMenu.SuspendLayout();
@@ -88,7 +87,7 @@
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menu.Size = new System.Drawing.Size(1069, 28);
+            this.menu.Size = new System.Drawing.Size(1069, 26);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -99,7 +98,7 @@
             this.toolStripSeparator1,
             this.zakończMenuItem});
             this.plikMenuItem.Name = "plikMenuItem";
-            this.plikMenuItem.Size = new System.Drawing.Size(39, 24);
+            this.plikMenuItem.Size = new System.Drawing.Size(39, 22);
             this.plikMenuItem.Text = "Plik";
             // 
             // dodajFolderMenuItem
@@ -135,7 +134,7 @@
             this.toolStripSeparator6,
             this.pokażZaznaczenieMenuItem});
             this.widokMenuItem.Name = "widokMenuItem";
-            this.widokMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.widokMenuItem.Size = new System.Drawing.Size(59, 22);
             this.widokMenuItem.Text = "Widok";
             // 
             // zaznaczWszystkoMenuItem
@@ -175,12 +174,25 @@
             this.odwróćZaznaczenieMenuItem.Text = "Odwróć zaznaczenie";
             this.odwróćZaznaczenieMenuItem.Click += new System.EventHandler(this.odwróćZaznaczenieMenuItem_Click);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(260, 6);
+            // 
+            // pokażZaznaczenieMenuItem
+            // 
+            this.pokażZaznaczenieMenuItem.Name = "pokażZaznaczenieMenuItem";
+            this.pokażZaznaczenieMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pokażZaznaczenieMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.pokażZaznaczenieMenuItem.Text = "Pokaż zaznaczenie";
+            this.pokażZaznaczenieMenuItem.Click += new System.EventHandler(this.pokażZaznaczenieMenuItem_Click);
+            // 
             // pomocMenuItem
             // 
             this.pomocMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.czytajToMenuItem});
             this.pomocMenuItem.Name = "pomocMenuItem";
-            this.pomocMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.pomocMenuItem.Size = new System.Drawing.Size(64, 22);
             this.pomocMenuItem.Text = "Pomoc";
             // 
             // czytajToMenuItem
@@ -219,7 +231,6 @@
             this.odświeżMenuItem,
             this.toolStripSeparator2,
             this.pokażFolderMenuItem,
-            this.pokażPlikiToolStripMenuItem,
             this.toolStripSeparator4,
             this.zmieńTypMenuItem,
             this.zmieńMetodęMenuItem,
@@ -227,7 +238,7 @@
             this.usuńFolderMenuItem});
             this.folderMenu.Name = "folderMenu";
             this.folderMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.folderMenu.Size = new System.Drawing.Size(250, 178);
+            this.folderMenu.Size = new System.Drawing.Size(250, 152);
             // 
             // odświeżMenuItem
             // 
@@ -252,12 +263,6 @@
             this.pokażFolderMenuItem.ToolTipText = "Otwórz folder w ekploratorze plików";
             this.pokażFolderMenuItem.Click += new System.EventHandler(this.pokażFolderMenuItem_Click);
             // 
-            // pokażPlikiToolStripMenuItem
-            // 
-            this.pokażPlikiToolStripMenuItem.Name = "pokażPlikiToolStripMenuItem";
-            this.pokażPlikiToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.pokażPlikiToolStripMenuItem.Text = "Pokaż pliki";
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -275,7 +280,7 @@
             // plikiPdfMenuItem
             // 
             this.plikiPdfMenuItem.Name = "plikiPdfMenuItem";
-            this.plikiPdfMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.plikiPdfMenuItem.Size = new System.Drawing.Size(134, 26);
             this.plikiPdfMenuItem.Tag = "pdf";
             this.plikiPdfMenuItem.Text = "Pliki PDF";
             this.plikiPdfMenuItem.ToolTipText = "Zmień rodzaj pliku na pdf";
@@ -284,7 +289,7 @@
             // plikiJpgMenuItem
             // 
             this.plikiJpgMenuItem.Name = "plikiJpgMenuItem";
-            this.plikiJpgMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.plikiJpgMenuItem.Size = new System.Drawing.Size(134, 26);
             this.plikiJpgMenuItem.Tag = "jpg";
             this.plikiJpgMenuItem.Text = "Pliki JPG";
             this.plikiJpgMenuItem.ToolTipText = "Zmień rodzaj pliku na jpg";
@@ -334,10 +339,10 @@
             // 
             this.panel.Controls.Add(this.folderView);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 28);
+            this.panel.Location = new System.Drawing.Point(0, 26);
             this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1069, 488);
+            this.panel.Size = new System.Drawing.Size(1069, 490);
             this.panel.TabIndex = 3;
             // 
             // folderView
@@ -357,7 +362,7 @@
             this.folderView.Location = new System.Drawing.Point(0, 0);
             this.folderView.Margin = new System.Windows.Forms.Padding(4);
             this.folderView.Name = "folderView";
-            this.folderView.Size = new System.Drawing.Size(1069, 488);
+            this.folderView.Size = new System.Drawing.Size(1069, 490);
             this.folderView.TabIndex = 0;
             this.folderView.UseCompatibleStateImageBehavior = false;
             this.folderView.View = System.Windows.Forms.View.Details;
@@ -366,7 +371,7 @@
             // folderHeader
             // 
             this.folderHeader.Text = "Folder";
-            this.folderHeader.Width = 350;
+            this.folderHeader.Width = 400;
             // 
             // typHeader
             // 
@@ -397,19 +402,6 @@
             // 
             this.dataHeader.Text = "Data zliczania";
             this.dataHeader.Width = 150;
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(260, 6);
-            // 
-            // pokażZaznaczenieMenuItem
-            // 
-            this.pokażZaznaczenieMenuItem.Name = "pokażZaznaczenieMenuItem";
-            this.pokażZaznaczenieMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pokażZaznaczenieMenuItem.Size = new System.Drawing.Size(263, 26);
-            this.pokażZaznaczenieMenuItem.Text = "Pokaż zaznaczenie";
-            this.pokażZaznaczenieMenuItem.Click += new System.EventHandler(this.pokażZaznaczenieMenuItem_Click);
             // 
             // MainForm
             // 
@@ -450,7 +442,6 @@
         private System.Windows.Forms.ToolStripMenuItem czytajToMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajFolderMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pokażFolderMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pokażPlikiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odświeżMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmieńMetodęMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuńFolderMenuItem;
