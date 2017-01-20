@@ -48,6 +48,7 @@ Do zrobienia
 * nowość: pokaż zawartość zaznaczenia
 * nowość: zaznaczanie nowych folderów, których jeszcze nie zliczano
 * nowość: zaznaczanie nieaktualnych folderów, które były zliczane dawniej niż AktualneDni
+* nowość: raportowanie nieprawidłowych folderów
 
 2016-12-22 v1.6
 

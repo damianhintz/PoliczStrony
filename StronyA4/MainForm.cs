@@ -87,29 +87,42 @@ namespace StronyA4
             var pliki = 0;
             var strony = 0;
             var stronyA4 = 0;
-            var errors = new List<string>();
+            var plikiErrors = new List<string>();
+            var foldery = new List<string>();
+            var folderErrors = new List<string>();
             foreach (var item in items)
             {
-                var folderErrors = PoliczStronyA4(item.FolderStron);
-                errors.AddRange(folderErrors);
-                pliki += item.FolderStron.Pliki;
-                strony += item.FolderStron.Strony;
-                stronyA4 += item.FolderStron.StronyA4;
+                var folder = item.FolderStron;
+                try
+                {
+                    var errors = PoliczStronyA4(folder);
+                    plikiErrors.AddRange(errors);
+                    foldery.Add(folder.Folder);
+                }
+                catch (Exception ex)
+                {
+                    folderErrors.Add(folder.Folder + "\tERROR: " + ex.Message);
+                }
+                pliki += folder.Pliki;
+                strony += folder.Strony;
+                stronyA4 += folder.StronyA4;
                 item.Odśwież();
             }
             AutozapisProfilu();
             var icon = MessageBoxIcon.Information;
-            if (errors.Count > 0) icon = MessageBoxIcon.Warning;
+            if (folderErrors.Count > 0) icon = MessageBoxIcon.Warning;
+            if (plikiErrors.Count > 0) icon = MessageBoxIcon.Warning;
             MessageBox.Show(owner: this,
-                text: "Wczytane foldery: " + items.Count() +
-                "\nWczytane pliki: " + pliki + " (" + errors.Count + " błędów)" +
+                text: "Wczytane foldery: " + foldery.Count + " (" + folderErrors.Count + " błędów)" +
+                "\nWczytane pliki: " + pliki + " (" + plikiErrors.Count + " błędów)" +
                 "\nWczytane strony: " + strony +
                 "\nWczytane strony A4: " + stronyA4 +
                 "\nKoniec.",
                 caption: (sender as ToolStripItem).Text,
                 buttons: MessageBoxButtons.OK,
                 icon: icon);
-            PokażPlik(errors);
+            PokażPlik(folderErrors);
+            PokażPlik(plikiErrors);
         }
 
         void PokażPlik(IEnumerable<string> records)
