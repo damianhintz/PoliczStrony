@@ -250,5 +250,18 @@ namespace StronyA4
                 item.Selected = !folder.Data.HasValue;
             }
         }
+
+        private void zaznaczNieaktualneMenuItem_Click(object sender, EventArgs e)
+        {
+            var now = DateTime.Now;
+            for (int i = 0; i < folderView.VirtualListSize; i++)
+            {
+                var item = folderView.Items[i] as FolderViewItem;
+                var folder = item.FolderStron;
+                if (!folder.Data.HasValue) continue; //Pomiń nowe foldery
+                var dni = now - folder.Data.Value;
+                item.Selected = dni.Days > Settings.Default.AktualneDni;
+            }
+        }
     }
 }

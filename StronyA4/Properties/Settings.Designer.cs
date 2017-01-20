@@ -40,5 +40,14 @@ namespace StronyA4.Properties {
                 return ((string)(this["Formaty"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int AktualneDni {
+            get {
+                return ((int)(this["AktualneDni"]));
+            }
+        }
     }
 }

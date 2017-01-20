@@ -160,6 +160,7 @@
             this.zaznaczNieaktualneMenuItem.Size = new System.Drawing.Size(263, 26);
             this.zaznaczNieaktualneMenuItem.Text = "Zaznacz nieaktualne";
             this.zaznaczNieaktualneMenuItem.ToolTipText = "Zaznacz fodlery, dla których zliczano strony, ale dawno temu";
+            this.zaznaczNieaktualneMenuItem.Click += new System.EventHandler(this.zaznaczNieaktualneMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
